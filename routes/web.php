@@ -18,9 +18,3 @@ Route::get('/', function () {
     return view('welcome');
     //raghad
 });
-//test from abdulrahman.
-//test from abdulrahman.
-//test from abdulrahman.
-//test from abdulrahman.
-//test from abdulrahman.
-//test2 from abdulrahman.
