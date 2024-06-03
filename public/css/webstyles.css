@@ -1,17 +1,25 @@
 /* General body styles */
+html,
 body {
     margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%),
         linear-gradient(90deg, rgba(0, 0, 0, 0.9) 33.18%, rgba(0, 0, 0, 0) 80.52%),
-        url(../img/images/movie-poster.png) no-repeat center center fixed;
+        url('../img/images/movie-poster.png') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
 }
+
 
 /* Header styles */
 header {
     position: absolute;
-    height: 70px;
+    height: 60px;
     left: 50%;
     top: 18px;
     transform: translateX(-50%);
@@ -31,6 +39,7 @@ header nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 60px;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
     border: 1px solid #228EE5;
 
@@ -107,7 +116,7 @@ header nav {
 
 .navbar .join-us {
     background-color: #EEC438;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 45px;
     color: white;
     font-weight: bold;
@@ -126,7 +135,7 @@ header nav {
     justify-content: space-between;
     padding: 50px;
     color: #fff;
-    min-height: 70vh;
+    min-height: 90vh;
     border-radius: 20px;
     margin: 20px auto;
     max-width: 1200px;
@@ -134,6 +143,7 @@ header nav {
 }
 
 .movie-info {
+    max-height: 100vh;
     max-width: 50%;
     position: relative;
     z-index: 2;
@@ -166,7 +176,7 @@ header nav {
 
 .movie-details .duration::before {
     content: '⏰';
-    margin-right: 5px;
+    margin-right: 7px;
 }
 
 .tags {
@@ -178,7 +188,7 @@ header nav {
 .tags span {
     background-color: #E0E0E0;
     color: #000;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 8px;
 }
 
@@ -191,6 +201,7 @@ header nav {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    margin-left: 25px;
+    margin-left: 40px;
     width: 191px;
+    font-size: 18px;
 }
