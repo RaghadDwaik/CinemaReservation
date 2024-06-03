@@ -16,5 +16,10 @@ Route::get('/dashboard',[DashboardController::class,'index']);
 
 Route::get('/', function () {
     return view('welcome');
-    //raghad 
+    //raghad
 });
+//test from abdulrahman.
+//test from abdulrahman.
+//test from abdulrahman.
+//test from abdulrahman.
+//test from abdulrahman.
