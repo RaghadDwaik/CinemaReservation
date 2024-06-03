@@ -15,7 +15,7 @@ class MovieSeeder extends Seeder
     {
         Movie::create([
             'movie_name'=>'A Part of You',
-            'image' => 'img/movie_images/a_part_of_you_poster.webp',  
+            'image' => 'img/movie_images/a_part_of_you_poster.jpg',  
             'language'=>'Swedish',
             'description'=>'A teenager struggles to pick up the pieces of her shattered world in this emotional and bittersweet coming-of-age drama about those who are left behind.',
             'rating' => '7.0 / 10',
