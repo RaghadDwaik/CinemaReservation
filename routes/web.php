@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\MovieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 |
 */
 Route::get('/dashboard',[DashboardController::class,'index']);
+Route::get('/dashboard/movies/index',[MovieController::class,'index'])->name('dashboard.movies.index');;
 
 Route::get('/', function () {
     return view('welcome');
