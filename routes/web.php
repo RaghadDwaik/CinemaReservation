@@ -23,3 +23,4 @@ Route::get('/', function () {
 //test from abdulrahman.
 //test from abdulrahman.
 //test from abdulrahman.
+//test2 from abdulrahman.
