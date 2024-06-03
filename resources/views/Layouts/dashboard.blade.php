@@ -66,7 +66,7 @@
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Movie</a>
                                                 <ul class="submenu">
-                                                    <li><a href="movie.html">Movie</a></li>
+                                                    <li><a href="{{route('dashboard.movies.index')}}">Movie</a></li>
                                                     <li><a href="movie-details.html">Movie Details</a></li>
                                                 </ul>
                                             </li>
