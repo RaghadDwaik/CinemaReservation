@@ -18,3 +18,9 @@ Route::get('/', function () {
     return view('welcome');
     //raghad
 });
+
+
+
+Route::get('/', function () {
+    return view('layouts.app');
+});
