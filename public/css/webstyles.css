@@ -1,0 +1,207 @@
+/* General body styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.9) 33.18%, rgba(0, 0, 0, 0) 80.52%),
+        url('../img/images/movie-poster.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* Header styles */
+header {
+    position: absolute;
+    height: 60px;
+    left: 50%;
+    top: 18px;
+    transform: translateX(-50%);
+    background: rgba(26, 25, 25, 0.3);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    z-index: 10;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Navigation styles */
+header nav {
+    background: rgba(26, 25, 25, 0.4);
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid #228EE5;
+
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 18px;
+    position: relative;
+}
+
+/* Underline effect for nav links */
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #EEC438;
+    border-radius: 2px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar li select {
+    background: none;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 18px;
+    appearance: none;
+    /* Removes the default arrow */
+    -webkit-appearance: none;
+    /* Removes the default arrow in Safari */
+    -moz-appearance: none;
+    /* Removes the default arrow in Firefox */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4gPHBhdGggZD0iTTEuNzcgMy43Yy0uMTItLjEyLS4zMy0uMTItLjQ1IDBsLS43NC43NGMtLjEyLjEyLS4xMi4zMyAwIC40NWw0LjUgNC41Yy4xMi4xMi4zMy4xMi40NSAwbDQuNS00LjVjLjEyLS4xMi4xMi0uMzMgMC0uNDVsLS43NC0uNzRjLS4xMi0uMTItLjMzLS4xMi0uNDUgMGwtMy4yMyAzLjIzTDEuNzcgMy43eiIgZmlsbD0iI2ZmZiIgLz4gPC9zdmc+');
+    /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.navbar li select option {
+    background: black;
+    color: white;
+}
+
+
+.navbar li a:hover::after,
+.navbar li a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar .join-us {
+    background-color: #EEC438;
+    padding: 5px 20px;
+    border-radius: 45px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar .icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    color: #fff;
+    min-height: 90vh;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.movie-info {
+    max-height: 100vh;
+    max-width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.movie-info h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+.movie-info p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+/* Movie details and tags styles */
+.movie-details {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.movie-details span {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.movie-details .duration::before {
+    content: '⏰';
+    margin-right: 7px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tags span {
+    background-color: #E0E0E0;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+/* Book Now button styles */
+.book-now {
+    background-color: #EEC438;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 40px;
+    width: 191px;
+    font-size: 18px;
+}
