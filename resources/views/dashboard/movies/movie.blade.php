@@ -13,9 +13,11 @@
                  <div class="movie-page-meta">
                      <div class="tr-movie-menu-active text-center">
                          <button class="active" data-filter="*">Animation</button>
-                         <button class="" data-filter=".cat-one">Movies</button>
-                         <button class="" data-filter=".cat-two">Romantic</button>
-                     </div>
+                         <button class="" data-filter=".cat-one">Comedy</button>
+                         <button class="" data-filter=".cat-two">Action</button>
+                         <button class="" data-filter=".cat-two">Drama</button>
+                   
+                        </div>
                      <form action="#" class="movie-filter-form">
                          <select class="custom-select">
                              <option selected>English</option>
