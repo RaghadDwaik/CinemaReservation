@@ -26,4 +26,5 @@ Route::post('dashboard/customers/store',[CustomerController::class, 'store'])->n
 Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/dashboard/movies/index',[MovieController::class,'index'])->name('dashboard.movies.index');
 
+Route::get('/dashboard/customers/create',[CustomerController::class, 'create'])->name('dashboard.customers.create');
 
