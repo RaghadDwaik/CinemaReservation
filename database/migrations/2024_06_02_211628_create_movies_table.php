@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('rating');
             $table->string('run_time');
             $table->date('release_date');
+            $table->string('type');
             $table->timestamps();
         });
     }
