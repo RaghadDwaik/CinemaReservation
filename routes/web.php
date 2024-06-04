@@ -21,9 +21,10 @@ use App\Http\Controllers\Dashboard\MovieController;
 
 Route::get('/dashboard/customers', [CustomerController::class, 'index'])->name('dashboard.customers');
 Route::get('/dashboard/customers/create',[CustomerController::class, 'create'])->name('dashboard.customers.create');
-Route::post('dashboard/customers/store',[CustomerController::class, 'store'])->name('dashboard.customers.store')
-
+Route::post('dashboard/customers/store',[CustomerController::class, 'store'])->name('dashboard.customers.store');
 Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/dashboard/movies/index',[MovieController::class,'index'])->name('dashboard.movies.index');
 
+Route::get('/dashboard/movies/index2',[MovieController::class,'index'])->name('dashboard.movies.index');
+Route::get('/dashboard/movies/index3',[MovieController::class,'index'])->name('dashboard.movies.index');
 
