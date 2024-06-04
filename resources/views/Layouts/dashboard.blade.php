@@ -32,29 +32,7 @@
 
        
 
-        <!-- header-area -->
-        <header>
-        <nav>
-            <ul class="navbar">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Coupon</a></li>
-                <li><a href="#" class="join-us">Join Us</a></li>
-                <li>
-                    <select>
-                        <option value="en">EN</option>
-                        <option value="ar">Arabic</option>
-                    </select>
-                </li>
-                <li class="icon"><a href="#"><i class="fas fa-user"></i></a></li>
-                <li class="icon"><a href="#"><i class="fas fa-search"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-        <!-- header-area-end -->
-
+    
 
         <!-- main-area -->
         <main>
