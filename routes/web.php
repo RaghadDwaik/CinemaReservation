@@ -14,6 +14,8 @@ use App\Http\Controllers\Dashboard\MovieController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/dashboard',[DashboardController::class,'index']);
 Route::get('/dashboard/movies/index',[MovieController::class,'index'])->name('dashboard.movies.index');
+
 
