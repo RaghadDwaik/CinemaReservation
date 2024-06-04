@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\MovieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,6 @@ use App\Http\Controllers\Dashboard\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/',[DashboardController::class,'index']);
-
+Route::get('/dashboard',[DashboardController::class,'index']);
+Route::get('/dashboard/movies/index',[MovieController::class,'index'])->name('dashboard.movies.index');
 
