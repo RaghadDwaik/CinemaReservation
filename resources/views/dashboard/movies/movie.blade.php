@@ -1,4 +1,3 @@
-<!-- movie-area -->
 <section class="movie-area movie-bg" data-background="{{ asset('img/bg/movie_bg.jpg') }}">
     <div class="container">
         <div class="row align-items-end mb-60">
@@ -28,8 +27,8 @@
         </div>
 
         <div class="row tr-movie-active">
+            <!-- Fetching movie data from the table -->
             @foreach ($movies as $item)
-                <!-- Change $movie to $movies -->
                 <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
                     <div class="movie-item movie-item-three mb-50">
                         <div class="movie-poster">
@@ -44,12 +43,15 @@
                                 </li>
                                 <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch
                                         Now</a></li>
-                                <li><a href="movie-details.html" class="btn">Details</a></li>
+                                <li><a href="{{ route('dashboard.movies.show', $item->id) }}" class="btn">Details</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="movie-content">
                             <div class="top">
-                                <h5 class="title"><a href="movie-details.html">{{ $item->movie_name }}</a></h5>
+                                <h5 class="title"><a
+                                        href="{{ route('dashboard.movies.show', $item->id) }}">{{ $item->movie_name }}</a>
+                                </h5>
                                 <span class="date">{{ $item->release_date }}</span>
                             </div>
                             <div class="bottom">

@@ -9,9 +9,14 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     public function index(){
-        $movies = Movie::all(); // Change the variable name to $movies
-        return view('dashboard.movies.index', compact('movies')); // Pass $movies to the view
+        $movies = Movie::all(); // Ensure you are fetching all movies
+        return view('dashboard.movies.index', compact('movies')); // Pass the movies variable to the view
     }
+
+    public function show($id)
+    {
+        $movie = Movie::findOrFail($id);
+        return view('dashboard.movies.show', compact('movie'));
+    }
+    
 }
-
-
