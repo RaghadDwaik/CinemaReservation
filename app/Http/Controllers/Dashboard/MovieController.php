@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     public function index(){
-        $movie = Movie::all();
-        return view('dashboard.movies.index' , compact('movie'));
+        $movies = Movie::all(); // Change the variable name to $movies
+        return view('dashboard.movies.index', compact('movies')); // Pass $movies to the view
     }
 }
+
+
