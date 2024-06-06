@@ -1,9 +1,12 @@
- <!-- movie-area  show all movie -->
+ <!-- movie-area -->
  @extends('dashboard.movies.index')
  @section('allMovies')
  <div class="row tr-movie-active">
      <!-- //لجلب بيانات الافلام من التيبل -->
+
      @foreach ($movie as $item)
+    
+     @if($item->type == $anmation)
      <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
 
          <div class="movie-item movie-item-three mb-50">
@@ -40,6 +43,8 @@
          </div>
 
      </div>
+     
+     @endif
      @endforeach
  </div>
 

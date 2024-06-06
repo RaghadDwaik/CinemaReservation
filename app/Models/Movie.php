@@ -17,6 +17,6 @@ class Movie extends Model
         'rating',
         'run_time',
         'release_date',
-
+        'type',
     ];
 }

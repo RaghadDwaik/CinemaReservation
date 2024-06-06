@@ -21,6 +21,7 @@ class MovieSeeder extends Seeder
             'rating' => '7.0',
             'run_time'=>'100 minutes',
             'release_date' => date('2024-5-31')  ,
+            'type'=> 'Drama',
            
             
             
@@ -33,7 +34,8 @@ class MovieSeeder extends Seeder
             'description'=>'A businessman mysteriously wakes up in an open-air prison cell with only an old grist mill. Forced to work as a beast of burden, he must find a way to escape before the birth of his child.',
             'rating' => '6.0',
             'run_time'=>'106  minutes',
-            'release_date' => date('2023-10-9')
+            'release_date' => date('2023-10-9'),
+            'type' =>'Drama',
             
             
         ]);
@@ -44,7 +46,8 @@ class MovieSeeder extends Seeder
             'description'=>'After witnessing a murder, an ex-junkie is forced to cooperate with the killer to save her daughters life. She must fight time, the police and the criminal underworld to save the only person who means something to her.',
             'rating' => '9.0',
             'run_time'=>'87  minutes',
-            'release_date' => date('2023-6-7')
+            'release_date' => date('2023-6-7'),
+            'type' =>'Action',
             
             
         ]);
@@ -56,8 +59,8 @@ class MovieSeeder extends Seeder
             'description'=>'From writer and director John Krasinski, IF is about a girl who discovers that she can see everyones imaginary friends and what she does with that superpower as she embarks on a magical adventure to reconnect forgotten IFs with their kids.',
             'rating' => '3.9',
             'run_time'=>'104  minutes',
-            'release_date' => date('2024-5-17')
-            
+            'release_date' => date('2024-5-17'),
+            'type' =>'Animation',
             
         ]);
 
@@ -68,7 +71,8 @@ class MovieSeeder extends Seeder
             'description'=>'After Garfields unexpected reunion with his long-lost father, ragged alley cat Vic, he and his canine friend Odie are forced from their perfectly pampered lives to join Vic on a risky heist.',
             'rating' => '5.9',
             'run_time'=>'101  minutes',
-            'release_date' => date('2024-5-24')
+            'release_date' => date('2024-5-24'),
+            'type' =>'Animation',
             
             
         ]);
@@ -80,7 +84,8 @@ class MovieSeeder extends Seeder
             'description'=>'في إطار من الرعب، يعود عز الدين من الخارج بعد غياب سنوات طويلة، باحثا عن أهله، ومع إقامته في قصر عائلته، يكتشف مغامرة غير متوقعة داخل القصر.',
             'rating' => '5.9',
             'run_time'=>'112  minutes',
-            'release_date' => date('2023-4-21')
+            'release_date' => date('2023-4-21'),
+            'type' =>'Action',
             
             
         ]);
@@ -91,7 +96,8 @@ class MovieSeeder extends Seeder
             'description'=>'Gad returns from the USA to his French homeland. However, he does not tell his Jewish family that he now wants to convert to Catholicism. When Gads parents learn of this, they try to bring him back to Judaism.',
             'rating' => '5.9',
             'run_time'=>'90  minutes',
-            'release_date' => date('2022-10-24')
+            'release_date' => date('2022-10-24'),
+            'type' =>'Comedy',
             
             
         ]);
@@ -103,7 +109,60 @@ class MovieSeeder extends Seeder
             'description'=>'After witnessing a murder, an ex-junkie is forced to cooperate with the killer to save her daughters life. She must fight time, the police and the criminal underworld to save the only person who means something to her.',
             'rating' => '9.0',
             'run_time'=>'87  minutes',
-            'release_date' => date('2023-6-7')
+            'release_date' => date('2023-6-7'),
+            'type' =>'Action',
+            
+            
+        ]);
+
+        Movie::create([
+            'movie_name'=>'Eric',
+            'image' => 'img/movie_images/eric.jpg',  
+            'language'=>'English',
+            'description'=>'Vincent, a grief-stricken father whose son goes missing, finds solace through his friendship with Eric, the monster that lives under Edgars bed.',
+            'rating' => '7.0',
+            'run_time'=>'55  minutes',
+            'release_date' => date('2024-3-24'),
+            'type' =>'Drama',
+            
+            
+        ]);
+
+        Movie::create([
+            'movie_name'=>'Challengers',
+            'image' => 'img/movie_images/challengerc.jpeg',  
+            'language'=>'English',
+            'description'=>'Tashi, a former tennis prodigy turned coach, turned her husband into a champion. But to overcome a losing streak, he needs to face his ex-best friend and Tashis ex-boyfriend.',
+            'rating' => '2.6',
+            'run_time'=>'131  minutes',
+            'release_date' => date('2024-4-26'),
+            'type' =>'Drama',
+            
+            
+        ]);
+
+        Movie::create([
+            'movie_name'=>'Inside Out 2',
+            'image' => 'img/movie_images/inside_out.jpg',  
+            'language'=>'English',
+            'description'=>'Follow Riley, in her teenage years, encountering new emotions.',
+            'rating' => '2.6',
+            'run_time'=>'100  minutes',
+            'release_date' => date('2024-6-14'),
+            'type' =>'Animation',
+            
+            
+        ]);
+
+        Movie::create([
+            'movie_name'=>'The Lion King',
+            'image' => 'img/movie_images/lion_king.jpg',  
+            'language'=>'English',
+            'description'=>'Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.',
+            'rating' => '8.5',
+            'run_time'=>'88  minutes',
+            'release_date' => date('1994-7-14'),
+            'type' =>'Animation',
             
             
         ]);
