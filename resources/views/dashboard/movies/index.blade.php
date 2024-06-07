@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
     <link rel="stylesheet" href="{{ asset('css/webstyles.css') }}">
 
     <!-- Place favicon.ico in the root directory -->
@@ -26,15 +28,45 @@
     <link rel="stylesheet" href="{{ asset('css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/odometer.css')}}">
+    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('css/default.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+
 </head>
 
 <body>
+
+=======
+
+@if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                       
+                    @endauth
+                </div>
+            @endif
 
     <!-- preloader -->
     <div id="preloader">
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <img src="{{ asset('img/preloader.svg') }}" alt="">
+
+                <img src="{{asset('img/preloader.svg')}}" alt="">
+
             </div>
         </div>
     </div>
@@ -48,11 +80,15 @@
         <nav>
             <ul class="navbar">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Movies</a></li>
+                <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Coupon</a></li>
-                <li><a href="#" class="join-us">Join Us</a></li>
+
+                @if (Route::has('register')) 
+                               <li><a href="{{ route('register') }}" class="join-us">Join Us</a></li>
+
+                        @endif
                 <li>
                     <select>
                         <option value="en">EN</option>
@@ -90,7 +126,47 @@
         <!-- breadcrumb-area-end -->
 
         <!-- movie-area -->
+
         @include('dashboard.movies.movie')
+
+
+        <section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
+            <div class="container">
+                <div class="row align-items-end mb-60">
+                    <div class="col-lg-4">
+                        <div class="section-title text-center text-lg-left">
+                            <span class="sub-title">ONLINE STREAMING</span>
+                            <h2 class="title">New Release Movies</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="movie-page-meta">
+                            <div class="tr-movie-menu-active text-center">
+
+                                <a href="{{route('dashboard.movies.animation')}}" class="btn">Animation</a>
+                                <a href="{{route('dashboard.movies.comedy')}}" class="btn">Comedy</a>
+                                <a href="{{route('dashboard.movies.action')}}" class="btn">Action</a>
+                                <a href="{{route('dashboard.movies.drama')}}" class="btn">Drama</a>
+ 
+                            </div>
+                            
+                            <form action="#" class="movie-filter-form ">
+                                <select class="custom-select">
+                                    <option value="1">Blueray</option>
+                                    <option value="2">4k Movie</option>
+                                    <option value="3">Hd Movie</option>
+                             </select>
+                                
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="main">
+                    @yield('allMovies')
+                </div>
+            </div>
+        </section>
 
         <!-- movie-area-end -->
 
@@ -126,6 +202,7 @@
     <!-- footer-area-end -->
 
     <!-- JS here -->
+
     <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -144,3 +221,5 @@
 </body>
 
 </html>
+
+   

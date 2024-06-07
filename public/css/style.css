@@ -262,6 +262,7 @@ label {
     vertical-align: middle;
     white-space: nowrap;
     max-width: 200px;
+    margin-right: 5px;
 }
 .btn > i {
     margin-right: 7px;
@@ -1157,7 +1158,8 @@ label {
     flex-wrap: wrap;
 }
 .movie-filter-form {
-    margin: 10px 0 0px 5px;
+    margin: 0px 0 0px 10px;
+    /* margin: 10px 0 0px 5px; */
 }
 .movie-filter-form select {
     padding: 11px 35px 11px 25px;
