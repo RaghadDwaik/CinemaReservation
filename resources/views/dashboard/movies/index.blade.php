@@ -8,12 +8,26 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
     <link rel="stylesheet" href="{{ asset('css/webstyles.css') }}">
 
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/odometer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
@@ -26,10 +40,12 @@
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+
 </head>
 
 <body>
 
+=======
 
 @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -42,11 +58,15 @@
                     @endauth
                 </div>
             @endif
+
     <!-- preloader -->
     <div id="preloader">
         <div id="loading-center">
             <div id="loading-center-absolute">
+                <img src="{{ asset('img/preloader.svg') }}" alt="">
+
                 <img src="{{asset('img/preloader.svg')}}" alt="">
+
             </div>
         </div>
     </div>
@@ -106,6 +126,10 @@
         <!-- breadcrumb-area-end -->
 
         <!-- movie-area -->
+
+        @include('dashboard.movies.movie')
+
+
         <section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
             <div class="container">
                 <div class="row align-items-end mb-60">
@@ -143,6 +167,7 @@
                 </div>
             </div>
         </section>
+
         <!-- movie-area-end -->
 
         <!-- newsletter-area -->
@@ -177,21 +202,24 @@
     <!-- footer-area-end -->
 
     <!-- JS here -->
-    <script src="{{asset('js/vendor/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/jquery.odometer.min.js')}}"></script>
-    <script src="{{asset('js/jquery.appear.js')}}"></script>
-    <script src="{{asset('js/slick.min.js')}}"></script>
-    <script src="{{asset('js/ajax-form.js')}}"></script>
-    <script src="{{asset('js/wow.min.js')}}"></script>
-    <script src="{{asset('js/aos.js')}}"></script>
-    <script src="{{asset('js/plugins.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+
+    <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.odometer.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/ajax-form.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>
+
+   
