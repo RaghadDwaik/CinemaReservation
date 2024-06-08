@@ -10,8 +10,8 @@ class MovieController extends Controller
 {
     public function index(){
 
-        $movies = Movie::all(); // Ensure you are fetching all movies
-        return view('dashboard.movies.index', compact('movies')); // Pass the movies variable to the view
+        $movie = Movie::all(); // Ensure you are fetching all movies
+        return view('dashboard.movies.index', compact('movie')); // Pass the movies variable to the view
     }
 
     public function show($id)
