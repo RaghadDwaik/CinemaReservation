@@ -8,7 +8,7 @@
 
          <div class="movie-item movie-item-three mb-50">
              <div class="movie-poster">
-                 <img src="{{ asset($item -> image) }}" alt="">
+                 <img src="{{ asset($item->image) }}" alt="">
                  <ul class="overlay-btn">
                      <li class="rating">
                          <i class="fas fa-star"></i>
@@ -19,7 +19,7 @@
                      </li>
                      <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch
                              Now</a></li>
-                     <li><a href="movie-details.html" class="btn">Details</a></li>
+                     <li><a href="{{route('dashboard.movies.show',$item->id)}}" class="btn">Details</a></li>
                  </ul>
              </div>
              <div class="movie-content">
