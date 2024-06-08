@@ -45,7 +45,6 @@
 
 <body>
 
-=======
 
 @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -127,7 +126,7 @@
 
         <!-- movie-area -->
 
-        @include('dashboard.movies.movie')
+       
 
 
         <section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
