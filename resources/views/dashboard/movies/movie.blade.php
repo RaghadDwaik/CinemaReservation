@@ -1,30 +1,35 @@
-<section class="movie-area movie-bg" data-background="{{ asset('img/bg/movie_bg.jpg') }}">
-    <div class="container">
-        <div class="row align-items-end mb-60">
-            <div class="col-lg-6">
-                <div class="section-title text-center text-lg-left">
-                    <span class="sub-title">ONLINE STREAMING</span>
-                    <h2 class="title">New Release Movies</h2>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="movie-page-meta">
-                    <div class="tr-movie-menu-active text-center">
-                        <button class="active" data-filter="*">Animation</button>
-                        <button class="" data-filter=".cat-one">Movies</button>
-                        <button class="" data-filter=".cat-two">Romantic</button>
+<section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
+            <div class="container">
+                <div class="row align-items-end mb-60">
+                    <div class="col-lg-4">
+                        <div class="section-title text-center text-lg-left">
+                            <span class="sub-title">ONLINE STREAMING</span>
+                            <h2 class="title">New Release Movies</h2>
+                        </div>
                     </div>
-                    <form action="#" class="movie-filter-form">
-                        <select class="custom-select">
-                            <option selected>English</option>
-                            <option value="1">Blueray</option>
-                            <option value="2">4k Movie</option>
-                            <option value="3">Hd Movie</option>
-                        </select>
-                    </form>
+                    <div class="col-lg-8">
+                        <div class="movie-page-meta">
+                            <div class="tr-movie-menu-active text-center">
+
+                                <a href="{{route('dashboard.movies.animation')}}" class="btn">Animation</a>
+                                <a href="{{route('dashboard.movies.comedy')}}" class="btn">Comedy</a>
+                                <a href="{{route('dashboard.movies.action')}}" class="btn">Action</a>
+                                <a href="{{route('dashboard.movies.drama')}}" class="btn">Drama</a>
+ 
+                            </div>
+                            
+                            <form action="#" class="movie-filter-form ">
+                                <select class="custom-select">
+                                    <option value="1">Blueray</option>
+                                    <option value="2">4k Movie</option>
+                                    <option value="3">Hd Movie</option>
+                             </select>
+                                
+                            </form>
+                            
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
         <div class="row tr-movie-active">
             <!-- Fetching movie data from the table -->
