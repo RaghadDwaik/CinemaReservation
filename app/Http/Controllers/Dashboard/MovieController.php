@@ -19,9 +19,7 @@ class MovieController extends Controller
         $movie = Movie::findOrFail($id);
         return view('dashboard.movies.show', compact('movie'));
     }
-        $movie = Movie::all();
-        return view('dashboard.movies.movie' , compact('movie'));
-    }
+      
 
     public function animation(){
         $movie = Movie::all();
