@@ -38,10 +38,10 @@ Route::get('/dashboard/movies/{id}', [MovieController::class, 'show'])->name('da
 
 
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index');
-Route::get('/dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
-Route::get('/dashboard/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
-Route::get('/dashboard/movies/action',[MovieController::class,'action'])->name('dashboard.movies.action');
-Route::get('/dashboard/movies/drama',[MovieController::class,'drama'])->name('dashboard.movies.drama');
+Route::get('/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
+Route::get('/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
+Route::get('/movies/action',[MovieController::class,'action'])->name('dashboard.movies.action');
+Route::get('/movies/drama',[MovieController::class,'drama'])->name('dashboard.movies.drama');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -52,6 +52,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+Route::get('dashboard/search/search', function () {
+    return view('dashboard.search.search');
+})->name('dashboard.search.search');
+
 
 require __DIR__.'/auth.php';
  

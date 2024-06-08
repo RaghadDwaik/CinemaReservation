@@ -33,7 +33,7 @@
 
         <div class="row tr-movie-active">
             <!-- Fetching movie data from the table -->
-            @foreach ($movies as $item)
+            @foreach ($movie as $item)
                 <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
                     <div class="movie-item movie-item-three mb-50">
                         <div class="movie-poster">

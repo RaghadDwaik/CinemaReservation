@@ -96,7 +96,7 @@
                     </select>
                 </li>
                 <li class="icon"><a href="#"><i class="fas fa-user"></i></a></li>
-                <li class="icon"><a href="#"><i class="fas fa-search"></i></a></li>
+                <li class="icon"><a href="{{ route('dashboard.search.search') }}"><i class="fas fa-search"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -144,7 +144,7 @@
                             <div class="tr-movie-menu-active text-center">
 
                                 <a href="{{route('dashboard.movies.animation')}}" class="btn">Animation</a>
-                                <a href="{{route('dashboard.movies.comedy')}}" class="btn">Comedy</a>
+                                <a href="{{ route('dashboard.movies.comedy') }}" class="btn">Comedy</a>
                                 <a href="{{route('dashboard.movies.action')}}" class="btn">Action</a>
                                 <a href="{{route('dashboard.movies.drama')}}" class="btn">Drama</a>
  
