@@ -42,7 +42,8 @@ Route::get('dashboard/movies/drama',[MovieController::class,'drama'])->name('das
 //view after login
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'veri
+fied'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -50,7 +51,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/coupon', [CouponController::class, 'index'])->name('dashboard.coupon.index');
+
+
+
+
 //search view
+
 Route::get('dashboard/Layout/search', function () {
     return view('dashboard.Layout.search');
 })->name('dashboard.Layout.search');
@@ -65,4 +72,4 @@ Route::get('dashboard/Layout/adminpage',[DashboardController::class,'index'])->m
 
 
 require __DIR__.'/auth.php';
- 
+
