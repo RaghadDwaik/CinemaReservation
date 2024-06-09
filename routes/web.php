@@ -38,10 +38,10 @@ Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.mo
 
 
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index');
-Route::get('/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
-Route::get('/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
-Route::get('/movies/action',[MovieController::class,'action'])->name('dashboard.movies.action');
-Route::get('/movies/drama',[MovieController::class,'drama'])->name('dashboard.movies.drama');
+Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
+Route::get('dashboard/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
+Route::get('dashboard/movies/action',[MovieController::class,'action'])->name('dashboard.movies.action');
+Route::get('dashboard/movies/drama',[MovieController::class,'drama'])->name('dashboard.movies.drama');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
