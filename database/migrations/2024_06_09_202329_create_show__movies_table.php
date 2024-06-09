@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('show__movies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('movie_id')->constrained('movies');   //Created a foreign key constraint on this column referencing the "id" column of the related table.
+            $table->date('release_date'); // format('dd, mm, YY');
+            $table->time('show_time');   //format('H:i');
+            $table->integer('sinema_hall_no');
+            $table->integer('total_seat');
+            $table->integer('available_seat');
+            $table->integer('available_age');
             $table->timestamps();
         });
     }
