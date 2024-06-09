@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 use App\Http\Controllers\Dashboard\CustomerController;
-
 use App\Http\Controllers\Dashboard\MovieController;
 
 
@@ -26,26 +25,25 @@ use App\Http\Controllers\Dashboard\MovieController;
 
 
 
-Route::get('/dashboard/customers',[CustomerController::class, 'index'])->name('dashboard.customers');
-Route::get('/dashboard/customers/create',[CustomerController::class, 'create'])->name('dashboard.customers.create');
-Route::post('dashboard/customers/store',[CustomerController::class, 'store'])->name('dashboard.customers.store');
-Route::get('/dashboard',[DashboardController::class,'index']);
-// delet dashboard
-Route::get('/movies/index',[MovieController::class,'index'])->name('dashboard.movies.index');
+// details of each movie
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
 
 
 
-
+//home
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index');
+
+//Type of Movies
 Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
 Route::get('dashboard/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
 Route::get('dashboard/movies/action',[MovieController::class,'action'])->name('dashboard.movies.action');
 Route::get('dashboard/movies/drama',[MovieController::class,'drama'])->name('dashboard.movies.drama');
 
+//view after login
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'veri
+fied'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -53,19 +51,24 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 Route::get('/coupon', [CouponController::class, 'index'])->name('dashboard.coupon.index');
 
 
 
 
+//search view
+
 Route::get('dashboard/Layout/search', function () {
     return view('dashboard.Layout.search');
 })->name('dashboard.Layout.search');
 
+//AboutUS view
 Route::get('dashboard/Layout/aboutus', function () {
     return view('dashboard.Layout.aboutus');
 })->name('dashboard.Layout.aboutus');
+
+Route::get('dashboard/Layout/adminpage',[DashboardController::class,'index'])->middleware('admin');
+
 
 
 require __DIR__.'/auth.php';
