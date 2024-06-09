@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
 <div class="container">
     <ul>
         @foreach ($coupon as $coupon)
@@ -8,4 +6,4 @@
         @endforeach
     </ul>
 </div>
-@endsection
+

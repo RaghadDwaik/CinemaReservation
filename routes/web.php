@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 
 use App\Http\Controllers\Dashboard\CustomerController;
 use App\Http\Controllers\Dashboard\MovieController;
+use App\Http\Controllers\Dashboard\CouponController;
 
 
 /*
@@ -28,6 +29,7 @@ use App\Http\Controllers\Dashboard\MovieController;
 // details of each movie
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
 
+Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name('dashboard.Layout.coupon');
 
 
 //home
@@ -51,7 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/coupon', [CouponController::class, 'index'])->name('dashboard.coupon.index');
 
 
 

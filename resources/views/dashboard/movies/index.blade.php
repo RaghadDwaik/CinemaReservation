@@ -82,7 +82,7 @@
                 <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
                 <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Coupon</a></li>
+                <li><a href="{{ route('dashboard.Layout.coupon') }}">Coupon</a></li>
 
                 @if (Route::has('register')) 
                                <li><a href="{{ route('register') }}" class="join-us">Join Us</a></li>
