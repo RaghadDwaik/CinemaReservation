@@ -144,7 +144,7 @@
             <li><a href="#">Movies</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Coupon</a></li>
+            <li><a href="{{ route('dashboard.coupon.index') }}">Coupon</a></li>
             <li><a href="#" class="join-us">Join Us</a></li>
             <li>
                 <select>

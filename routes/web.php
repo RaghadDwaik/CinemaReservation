@@ -54,6 +54,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::get('/coupon', [CouponController::class, 'index'])->name('dashboard.coupon.index');
+
+
+
+
 Route::get('dashboard/Layout/search', function () {
     return view('dashboard.Layout.search');
 })->name('dashboard.Layout.search');
@@ -64,4 +69,4 @@ Route::get('dashboard/Layout/aboutus', function () {
 
 
 require __DIR__.'/auth.php';
- 
+
