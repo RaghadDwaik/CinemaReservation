@@ -80,7 +80,7 @@
             <ul class="navbar">
                 <li><a href="#">Home</a></li>
                 <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Coupon</a></li>
 
@@ -95,7 +95,7 @@
                     </select>
                 </li>
                 <li class="icon"><a href="#"><i class="fas fa-user"></i></a></li>
-                <li class="icon"><a href="{{ route('dashboard.search.search') }}"><i class="fas fa-search"></i></a></li>
+                <li class="icon"><a href="{{ route('dashboard.Layout.search') }}"><i class="fas fa-search"></i></a></li>
             </ul>
         </nav>
     </header>

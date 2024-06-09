@@ -54,9 +54,13 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('dashboard/search/search', function () {
-    return view('dashboard.search.search');
-})->name('dashboard.search.search');
+Route::get('dashboard/Layout/search', function () {
+    return view('dashboard.Layout.search');
+})->name('dashboard.Layout.search');
+
+Route::get('dashboard/Layout/aboutus', function () {
+    return view('dashboard.Layout.aboutus');
+})->name('dashboard.Layout.aboutus');
 
 
 require __DIR__.'/auth.php';
