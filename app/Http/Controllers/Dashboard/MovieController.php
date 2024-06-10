@@ -43,6 +43,6 @@ class MovieController extends Controller
         return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
     }
 
- 
-    
+
+
 }

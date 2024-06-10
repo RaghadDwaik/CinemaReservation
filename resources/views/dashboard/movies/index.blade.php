@@ -53,7 +53,7 @@
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-                       
+
                     @endauth
                 </div>
             @endif
@@ -81,10 +81,10 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
                 <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
                 <li><a href="{{ route('dashboard.Layout.coupon') }}">Coupon</a></li>
 
-                @if (Route::has('register')) 
+                @if (Route::has('register'))
                                <li><a href="{{ route('register') }}" class="join-us">Join Us</a></li>
 
                         @endif
@@ -126,7 +126,7 @@
 
         <!-- movie-area -->
 
-       
+
 
 
         <section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
@@ -146,18 +146,18 @@
                                 <a href="{{ route('dashboard.movies.comedy') }}" class="btn">Comedy</a>
                                 <a href="{{route('dashboard.movies.action')}}" class="btn">Action</a>
                                 <a href="{{route('dashboard.movies.drama')}}" class="btn">Drama</a>
- 
+
                             </div>
-                            
+
                             <form action="#" class="movie-filter-form ">
                                 <select class="custom-select">
                                     <option value="1">Blueray</option>
                                     <option value="2">4k Movie</option>
                                     <option value="3">Hd Movie</option>
                              </select>
-                                
+
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -221,4 +221,4 @@
 
 </html>
 
-   
+

@@ -72,5 +72,12 @@ Route::get('dashboard/Layout/aboutus', function () {
 Route::get('AdminPanel/AdminDashboard',[DashboardController::class,'index'])->middleware('admin');
 Route::get('AdminPanel/ViewUser',[DashboardController::class,'user'])->name('AdminPanel.ViewUser');
 
+//contact us
+
+// Route::get('dashboard/movies/footer', function (){
+//     return view('dashboard.movies.footer');
+// })->name('dashboard.movies.footer');
+
+
 require __DIR__.'/auth.php';
 
