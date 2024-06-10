@@ -68,9 +68,9 @@ Route::get('dashboard/Layout/aboutus', function () {
     return view('dashboard.Layout.aboutus');
 })->name('dashboard.Layout.aboutus');
 
-Route::get('dashboard/Layout/adminpage',[DashboardController::class,'index'])->middleware('admin');
-
-
+//Admin Route
+Route::get('AdminPanel/AdminDashboard',[DashboardController::class,'index'])->middleware('admin');
+Route::get('AdminPanel/ViewUser',[DashboardController::class,'user'])->name('AdminPanel.ViewUser');
 
 require __DIR__.'/auth.php';
 
