@@ -1,23 +1,23 @@
 <!-- footer-area -->
-<footer>
+<footer id="contact-us">
             <div class="footer-top-wrap">
                 <div class="container">
                     <div class="footer-menu-wrap">
                         <div class="row align-items-center">
                             <div class="col-lg-3">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
+                                    <a href="{{route('dashboard.movies.index')}}"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-9">
                                 <div class="footer-menu">
                                     <nav>
                                         <ul class="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="index.html">Movie</a></li>
+                                            <li><a href="{{route('dashboard.movies.index')}}">Home</a></li>
+                                            <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
                                             <li><a href="index.html">tv show</a></li>
-                                            <li><a href="index.html">pages</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
+                                            <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
+                                            <li><a href="{{route('dashboard.Layout.coupon')}}">Coupon</a></li>
                                         </ul>
                                         <div class="footer-search">
                                             <form action="#">
@@ -45,11 +45,13 @@
                             <div class="col-md-5">
                                 <div class="footer-social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.facebook.com/amctheatres" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.instagram.com/amctheatres" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.tiktok.com/@amctheatres" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a></li>
+                                        <li><a href="https://www.youtube.com/user/amctheatres" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="https://twitter.com/amctheatres" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
                                     </ul>
+
                                 </div>
                             </div>
                         </div>
@@ -61,7 +63,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2021. All Rights Reserved By <a href="index.html">Movflx</a></p>
+                                <p>Copyright &copy; 2024. All Rights Reserved By <a href="{{route('dashboard.movies.index')}}">Movflx</a></p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

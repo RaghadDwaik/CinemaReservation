@@ -72,5 +72,12 @@ Route::get('dashboard/Layout/adminpage',[DashboardController::class,'index'])->m
 
 
 
+//contact us
+
+// Route::get('dashboard/movies/footer', function (){
+//     return view('dashboard.movies.footer');
+// })->name('dashboard.movies.footer');
+
+
 require __DIR__.'/auth.php';
 
