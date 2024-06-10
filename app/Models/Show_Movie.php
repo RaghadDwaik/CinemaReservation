@@ -17,4 +17,9 @@ class Show_Movie extends Model
         'available_seat' ,
         'available_age',
     ];
+   
+    public function movies(){
+        return $this->belongsTo(Movie::class);
+    }
+    
 }
