@@ -27,76 +27,121 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <style>
-        .title,
-        .more-details-title {
-            color: #EEC438;
-        }
+    .title,
+    .more-details-title {
+        color: #EEC438;
+    }
 
-        .btn-watch-trailer,
-        .btn-book-now {
-            background-color: transparent;
-            color: white;
-            border: 2px solid #228EE5;
-            border-radius: 10px;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+    .btn-watch-trailer,
+    .btn-book-now {
+        background-color: transparent;
+        color: white;
+        border: 2px solid #228EE5;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
 
-        .btn-watch-trailer:hover,
-        .btn-book-now:hover {
-            background-color: rgba(44, 44, 44, 0.5);
-            color: #EEC438;
-        }
+    .btn-watch-trailer:hover,
+    .btn-book-now:hover {
+        background-color: rgba(44, 44, 44, 0.5);
+        color: #EEC438;
+    }
 
-        .movie-details-area {
-            padding: 60px 0;
-            background-image: url('{{ asset('img/bg/movie_details_bg.jpg') }}');
-            /* Image background */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    .movie-details-area {
+        padding: 60px 0;
+        background-image: url('{{ asset('img/bg/movie_details_bg.jpg') }}');
+        /* Image background */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
 
-        .movie-details-content {
-            background-color: rgba(44, 44, 44, 0.5);
-            padding: 20px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            /* Center the image vertically */
-            margin-top: 80px;
-        }
+    .movie-details-content {
+        background-color: rgba(44, 44, 44, 0.5);
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        /* Center the image vertically */
+        margin-top: 80px;
+    }
 
-        .movie-details-info {
-            margin-left: 20px;
-        }
+    .movie-details-info {
+        margin-left: 20px;
+    }
 
-        .movie-details-content img {
-            margin-bottom: 20px;
-            max-height: 500px;
-            /* Ensure the image doesn't get too large */
-        }
+    .movie-details-content img {
+        margin-bottom: 20px;
+        max-height: 500px;
+        /* Ensure the image doesn't get too large */
+    }
 
-        .more-details-title {
-            color: #EEC438;
-            font-size: 24px;
-            margin-top: 20px;
-            text-align: center;
-        }
+    .more-details-title {
+        color: #EEC438;
+        font-size: 24px;
+        margin-top: 20px;
+        text-align: center;
+    }
 
-        .list-unstyled li {
-            margin-bottom: 10px;
-            /* Add spacing between list items */
-        }
+    .list-unstyled li {
+        margin-bottom: 10px;
+        /* Add spacing between list items */
+    }
 
-        .movie-details-info p {
-            margin-bottom: 20px;
-            /* Add space below the description */
-        }
+    .movie-details-info p {
+        margin-bottom: 20px;
+        /* Add space below the description */
+    }
+
+    /* Css show time area  */
+
+    .date__container {
+        top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        z-index: 4;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 10px rgb(238 196 56 / 30%);
+        border-radius: 12px;
+        /* background-color:#EEC438; */
+    }
+
+    .badge-date-light {
+        color: rgb(238 196 56);
+        border-bottom: 2px solid #EEC438;
+    }
+
+    .badge {
+        font-size: 33px;
+        border-radius: 0px;
+        padding: 0.25em 1.4em;
+        font-weight: 600;
+    }
+
+    .h3-hall-no {
+        margin-top: 20px;
+    }
+
+    .show-time {
+        margin-right: 10px;
+        font-size: 19px;
+    }
+
+    .badge-primary {
+        color: #fff;
+        background-color: rgba(44, 44, 44, 0.5);
+        border: 1px solid #007bff;
+    }
+
+    /* Css show time area  */
     </style>
 </head>
 
@@ -156,6 +201,63 @@
     </main>
     <!-- main-area-end -->
 
+    <!-- show time area -->
+
+    <section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
+        <div class="container">
+            <div class="row date__container">
+                <div class="col">
+                    <h2 href="#" class=" col badge badge-date-light">14 June Friday</h2>
+
+
+                    <div class="contant col">
+                        <h3 class="h3-hall-no">salon 3</h3><br>
+
+                        <div class="row col">
+                            <a href="#" class="badge badge-primary show-time">3:00</a>
+                            <a href="#" class="badge badge-primary show-time">5:40</a>
+                            <a href="#" class="badge badge-primary show-time">11:00</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row align-items-end mb-60">
+                <div class="col-lg-4">
+                    <div class="section-title text-center text-lg-left">
+                        <span class="sub-title">ONLINE STREAMING</span>
+                        <h2 class="title">New Release Movies</h2>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="movie-page-meta">
+                        <div class="tr-movie-menu-active text-center">
+
+                            <a href="{{route('dashboard.movies.animation')}}" class="btn">Animation</a>
+                            <a href="{{ route('dashboard.movies.comedy') }}" class="btn">Comedy</a>
+                            <a href="{{route('dashboard.movies.action')}}" class="btn">Action</a>
+                            <a href="{{route('dashboard.movies.drama')}}" class="btn">Drama</a>
+
+                        </div>
+
+                        <form action="#" class="movie-filter-form ">
+                            <select class="custom-select">
+                                <option value="1">Blueray</option>
+                                <option value="2">4k Movie</option>
+                                <option value="3">Hd Movie</option>
+                            </select>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- show time area end -->
+     
+    <!-- footer-area -->
+    @include('dashboard.movies.footer')
+    <!-- footer-area-end -->
     <!-- JS here -->
     <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
