@@ -43,6 +43,15 @@ class MovieController extends Controller
         return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
     }
 
+    // Method to handle the AJAX search request
+    public function ajaxSearch(Request $request)
+        {
+            $query = $request->input('query');
+            $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get();
+            return view('dashboard.Layout.search-results', compact('movies'))->render();
+        }
+
+
 
 
 }
