@@ -128,6 +128,7 @@
 
     .h3-hall-no {
         margin-top: 20px;
+        font-weight: 100;
     }
 
     .show-time {
@@ -191,11 +192,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-5">
+                <!-- <div class="mt-5">
                     <h3 class="more-details-title font-weight-bold">More Details</h3>
                     <p>{{ $movie->long_description }}</p>
                 </div>
-            </div>
+            </div> -->
         </section>
         <!-- movie-details-area-end -->
     </main>
@@ -203,58 +204,48 @@
 
     <!-- show time area -->
 
-    <section class="movie-area movie-bg" data-background="{{asset('img/bg/movie_bg.jpg')}}">
+    <section class="movie-area movie-bg .movie-details-content" data-background="{{asset('img/bg/movie_bg.jpg')}}">
         <div class="container">
             <div class="row date__container">
                 <div class="col">
-                    <h2 href="#" class=" col badge badge-date-light">14 June Friday</h2>
+                    <!-- Define a variable $date to store history and comparison -->
+                    <!-- If there are no Show times, a message will be printed "No Show Time" and with keeping the value $id_movie=0-->
+                    @php
+                    $date=date('1600-1-1');
+                    $id_movie=0;
+                    @endphp
 
+                    @foreach($showMovie as $item)
+                    <!-- {{$date}} -->
+                    <!-- if the selected movie->id is equal to the $item->movie_id  in a table showMovie -->
+                    @if($item->movie_id == $movie->id)
 
+                    <!-- if $item->film_release_date is not equal to the $date __ So that there is no repetition of the same date -->
+                    @if( $item->film_release_date !== $date)
+
+                    <h2 href="#" class="col badge badge-date-light">{{$item->film_release_date}}</h2>
+                    @php
+                    $date=$item->film_release_date;
+                    $id_movie=1;
+                    @endphp
+                    @endif
                     <div class="contant col">
-                        <h3 class="h3-hall-no">salon 3</h3><br>
-
-                        <div class="row col">
-                            <a href="#" class="badge badge-primary show-time">3:00</a>
-                            <a href="#" class="badge badge-primary show-time">5:40</a>
-                            <a href="#" class="badge badge-primary show-time">11:00</a>
+                        <h3 class="h3-hall-no">Hall : {{$item->sinema_hall_no}}</h3>
+                        <div class="col">
+                            <a href="#" class="badge badge-primary show-time">{{$item->show_time}}</a>
                         </div>
                     </div>
+
+                    @endif
+                    @endforeach
+                    @if($id_movie==0)<h2 href="#" class="col badge badge-date-light">No Show Time</h2>@endif
                 </div>
             </div>
-            <!-- <div class="row align-items-end mb-60">
-                <div class="col-lg-4">
-                    <div class="section-title text-center text-lg-left">
-                        <span class="sub-title">ONLINE STREAMING</span>
-                        <h2 class="title">New Release Movies</h2>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="movie-page-meta">
-                        <div class="tr-movie-menu-active text-center">
 
-                            <a href="{{route('dashboard.movies.animation')}}" class="btn">Animation</a>
-                            <a href="{{ route('dashboard.movies.comedy') }}" class="btn">Comedy</a>
-                            <a href="{{route('dashboard.movies.action')}}" class="btn">Action</a>
-                            <a href="{{route('dashboard.movies.drama')}}" class="btn">Drama</a>
-
-                        </div>
-
-                        <form action="#" class="movie-filter-form ">
-                            <select class="custom-select">
-                                <option value="1">Blueray</option>
-                                <option value="2">4k Movie</option>
-                                <option value="3">Hd Movie</option>
-                            </select>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div> -->
         </div>
     </section>
     <!-- show time area end -->
-     
+
     <!-- footer-area -->
     @include('dashboard.movies.footer')
     <!-- footer-area-end -->
