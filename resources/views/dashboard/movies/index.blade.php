@@ -40,25 +40,20 @@
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <style>
+        .btn-dark {
+            background-color: #343a40; /* Dark background color */
+            border: none; /* Remove border */
+        }
 
+        .btn-dark:hover {
+            background-color: #212529; /* Darken background color on hover */
+        }
+    </style>
 </head>
 
 <body>
 
-
-@if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-
-                    @endauth
-                </div>
-            @endif
-
-    <!-- preloader -->
     <div id="preloader">
         <div id="loading-center">
             <div id="loading-center-absolute">
@@ -88,13 +83,36 @@
                                <li><a href="{{ route('register') }}" class="join-us">Join Us</a></li>
 
                         @endif
-                <li>
-                    <select>
-                        <option value="en">EN</option>
-                        <option value="ar">Arabic</option>
-                    </select>
-                </li>
-                <li class="icon"><a href="#"><i class="fas fa-user"></i></a></li>
+                
+
+
+                        @if(Auth::check())
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
+            
+            <!-- Logout Form -->
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="dropdown-item">Logout</button>
+            </form>
+        </div>
+    </div>
+@else
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{ route('register') }}">Register</a>
+            <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+        </div>
+    </div>
+@endif
+
                 <li class="icon"><a href="{{ route('dashboard.Layout.search') }}"><i class="fas fa-search"></i></a></li>
             </ul>
         </nav>

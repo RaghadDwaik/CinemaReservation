@@ -44,8 +44,7 @@ Route::get('dashboard/movies/drama',[MovieController::class,'drama'])->name('das
 //view after login
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'veri
-fied'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
