@@ -14,6 +14,13 @@ class MovieController extends Controller
         $movie = Movie::all(); // Ensure you are fetching all movies
         return view('dashboard.movies.movie', compact('movie')); // Pass the movies variable to the view
     }
+    
+// view movie for admin
+    public function View(){
+
+        $movies = Movie::all(); 
+        return view('AdminPanel.ViewMovie', compact('movies')); 
+    }
 
     public function show($id)
     {
@@ -21,6 +28,8 @@ class MovieController extends Controller
         $showMovie = Show_Movie::all();
         return view('dashboard.movies.show', compact('movie' , 'showMovie'));
     }
+
+    
     public function animation(){
         $movie = Movie::all();
         $anmation = "Animation";
@@ -45,6 +54,15 @@ class MovieController extends Controller
         return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
     }
 
- 
-    
+    // Method to handle the AJAX search request
+    public function ajaxSearch(Request $request)
+        {
+            $query = $request->input('query');
+            $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get();
+            return view('dashboard.Layout.search-results', compact('movies'))->render();
+        }
+
+
+
+
 }

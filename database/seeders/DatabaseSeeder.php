@@ -20,6 +20,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this -> call(MovieSeeder::class);
+
         $this -> call(ShowMovieSeeder::class);
+
+
+        $this->call([
+            CouponsTableSeeder::class,
+        ]);
+
     }
 }

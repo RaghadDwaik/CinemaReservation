@@ -25,3 +25,4 @@ class Movie extends Model
         return $this -> hasMany(Show_Movie::class);
     }
 }
+
