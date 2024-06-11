@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
 
         $this -> call(MovieSeeder::class);
 
-       /* $this->call([
+        $this->call([
             CouponsTableSeeder::class,
-        ]);*/
+        ]);
     }
 }

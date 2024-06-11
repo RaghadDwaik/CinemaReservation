@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB; // Import the DB facade
-use Illuminate\Support\Str; // Import Str for the timestamps
+use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Str; 
 
 class CouponsTableSeeder extends Seeder
 {
