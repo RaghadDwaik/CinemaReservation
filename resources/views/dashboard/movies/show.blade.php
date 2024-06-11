@@ -134,7 +134,11 @@
     .show-time {
         margin-right: 10px;
         font-size: 19px;
+        margin: 10px;
+        border-radius: 5px;
+
     }
+
 
     .badge-primary {
         color: #fff;
@@ -212,13 +216,17 @@
                     <!-- If there are no Show times, a message will be printed "No Show Time" and with keeping the value $id_movie=0-->
                     @php
                     $date=date('1600-1-1');
+                    $Current_date = now()->format('Y-m-d');
+                    $day = now()->format('l');
                     $id_movie=0;
+                    $hall_no=0;
                     @endphp
 
                     @foreach($showMovie as $item)
                     <!-- {{$date}} -->
                     <!-- if the selected movie->id is equal to the $item->movie_id  in a table showMovie -->
-                    @if($item->movie_id == $movie->id)
+                    <!-- and The movie release date is after or equal to the current date -->
+                    @if($item->movie_id == $movie->id && $item->film_release_date >= $Current_date)
 
                     <!-- if $item->film_release_date is not equal to the $date __ So that there is no repetition of the same date -->
                     @if( $item->film_release_date !== $date)
@@ -230,13 +238,19 @@
                     @endphp
                     @endif
                     <div class="contant col">
+                        <!-- I used if to not repeat the hall number -->
+                        @if($item->sinema_hall_no !== $hall_no )
                         <h3 class="h3-hall-no">Hall : {{$item->sinema_hall_no}}</h3>
+                        @php
+                        $hall_no=$item->sinema_hall_no;
+                        @endphp
+                        @endif
                         <div class="col">
                             <a href="#" class="badge badge-primary show-time">{{$item->show_time}}</a>
                         </div>
                     </div>
-
                     @endif
+
                     @endforeach
                     @if($id_movie==0)<h2 href="#" class="col badge badge-date-light">No Show Time</h2>@endif
                 </div>
