@@ -22,7 +22,7 @@
                      </li>
                      <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch
                              Now</a></li>
-                     <li><a href="movie-details.html" class="btn">Details</a></li>
+                     <li><a href="{{route('dashboard.movies.show',$item->id)}}" class="btn">Details</a></li>
                  </ul>
              </div>
              <div class="movie-content">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Movie;
+use App\Models\Show_Movie;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -24,7 +25,8 @@ class MovieController extends Controller
     public function show($id)
     {
         $movie = Movie::findOrFail($id);
-        return view('dashboard.movies.show', compact('movie'));
+        $showMovie = Show_Movie::all();
+        return view('dashboard.movies.show', compact('movie' , 'showMovie'));
     }
 
     
