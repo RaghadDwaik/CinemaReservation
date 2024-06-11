@@ -71,13 +71,17 @@ Route::get('dashboard/Layout/aboutus', function () {
 //Admin Route
 Route::get('AdminPanel/AdminDashboard',[DashboardController::class,'index'])->middleware('admin');
 Route::get('AdminPanel/ViewUser',[DashboardController::class,'user'])->name('AdminPanel.ViewUser');
-
-//contact us
-
-// Route::get('dashboard/movies/footer', function (){
-//     return view('dashboard.movies.footer');
-// })->name('dashboard.movies.footer');
-
+Route::get('AdminPanel/ViewMovie',[MovieController::class,'View'])->name('AdminPanel.ViewMovie');
+Route::get('AdminPanel/AddMovie',[DashboardController::class,'addMovie'])->name('AdminPanel.AddMovie');
+Route::get('AdminPanel/AddUser',[DashboardController::class,'addUser'])->name('AdminPanel.AddUser');
+Route::post('AdminPanel/store', [DashboardController::class, 'store'])->name('AdminPanel.store');
+Route::post('AdminPanel/storeMovie', [DashboardController::class, 'storeM'])->name('AdminPanel.storeM');
+Route::get('AdminPanel/EditMovie/{movie}/edit', [DashboardController::class, 'editMovie'])->name('AdminPanel.EditMovie');
+Route::put('AdminPanel/EditMovie/{movie}/update', [DashboardController::class, 'updateMovie'])->name('AdminPanel.updateM');
+Route::get('AdminPanel/EditUser/{user}/edit', [DashboardController::class, 'editUser'])->name('AdminPanel.EditUser');
+Route::put('AdminPanel/EditUser/{user}/update', [DashboardController::class, 'updateUser'])->name('AdminPanel.updateU');
+Route::delete('AdminPanel/ViewUser/{user}', [DashboardController::class, 'deleteU'])->name('AdminPanel.deleteU');
+Route::delete('AdminPanel/ViewMovie/{movie}', [DashboardController::class, 'deleteM'])->name('AdminPanel.deleteM');
 
 require __DIR__.'/auth.php';
 

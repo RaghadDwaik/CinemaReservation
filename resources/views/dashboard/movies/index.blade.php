@@ -79,7 +79,7 @@
         <nav>
             <ul class="navbar">
                 <li><a href="#">Home</a></li>
-                <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
+                <li><a href="#movies">Movies</a></li>
                 <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
                 <li><a href="#contact-us">Contact Us</a></li>
                 <li><a href="{{ route('dashboard.Layout.coupon') }}">Coupon</a></li>

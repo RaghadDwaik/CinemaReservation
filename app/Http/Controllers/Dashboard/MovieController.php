@@ -13,12 +13,21 @@ class MovieController extends Controller
         $movie = Movie::all(); // Ensure you are fetching all movies
         return view('dashboard.movies.movie', compact('movie')); // Pass the movies variable to the view
     }
+    
+// view movie for admin
+    public function View(){
+
+        $movies = Movie::all(); 
+        return view('AdminPanel.ViewMovie', compact('movies')); 
+    }
 
     public function show($id)
     {
         $movie = Movie::findOrFail($id);
         return view('dashboard.movies.show', compact('movie'));
     }
+
+    
     public function animation(){
         $movie = Movie::all();
         $anmation = "Animation";

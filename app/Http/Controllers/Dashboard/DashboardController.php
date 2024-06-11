@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Movie;
 
 
 class DashboardController extends Controller
@@ -19,4 +20,83 @@ class DashboardController extends Controller
         return view ('AdminPanel.ViewUser', compact('users'));
 
     }
+    public function addUser()
+    {
+        return view('AdminPanel.AddUser');
+    }
+
+    public function addMovie()
+    {
+        return view('AdminPanel.AddMovie');
+    }
+
+    public function store(Request $request)
+    {
+        User::create(
+            $request->all()
+        );
+        session()->flash('success', 'User created successfully');
+        return redirect()->route('AdminPanel.ViewUser');
+
+    }
+
+    public function storeM(Request $request)
+    {
+        Movie::create(
+            $request->all()
+        );
+        session()->flash('success', 'Movie created successfully');
+        return redirect()->route('AdminPanel.ViewMovie');
+
+    }
+    public function editMovie(Movie $movie)
+    {
+        $types = ['Action', 'Comedy', 'Drama', 'Animation']; 
+        return view('AdminPanel.EditMovie',compact('movie', 'types'));
+    }
+
+   
+
+    public function updateMovie(Request $request , Movie $movie)
+    {
+        $movie->update(
+            $request->all()
+        );
+        session()->flash('update', 'Movie updated successfully');
+        return redirect()->route('AdminPanel.ViewMovie');
+
+
+    }
+
+
+    public function editUser(User $user)
+    {
+        return view('AdminPanel.EditUser',compact('user'));
+    }
+
+   
+
+    public function updateUser(Request $request , User $user)
+    {
+        $user->update(
+            $request->all()
+        );
+        session()->flash('update', 'User updated successfully');
+        return redirect()->route('AdminPanel.ViewUser');
+
+
+    }
+    public function deleteM(Movie $movie)
+    {
+        $movie->delete();
+        return redirect()->route('AdminPanel.ViewMovie')->with('success', 'Movie deleted successfully');
+    }
+    public function deleteU(User $user)
+    {
+        $user->delete();
+        return redirect()->route('AdminPanel.ViewUser')->with('success', 'user deleted successfully');
+    }
+   
 }
+
+

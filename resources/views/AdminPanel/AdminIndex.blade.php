@@ -9,13 +9,30 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin-top: 60px; /* Adjusted for navbar height */
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
         }
         .sidebar {
             height: 100vh;
             position: fixed;
             width: 250px;
             background-color: #343a40;
-            padding-top: 20px;
+            padding-top: 70px; /* Adjusted for navbar height + spacing */
+            top: 40px; /* Start below the navbar */
+            overflow-y: auto; /* Allow sidebar to scroll if content exceeds height */
         }
         .sidebar a {
             color: #ecf0f1;
@@ -31,30 +48,33 @@
             padding: 20px;
             width: calc(100% - 250px);
         }
-        .header {
-            background-color: black;
+        .card-header {
+            background-color: #007bff;
             color: #fff;
-            padding: 10px;
-            position: fixed;
-            width: calc(100% - 250px);
-            top: 0;
-            z-index: 1000;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar bg-dark text-dark">
+        <h1>Admin Panel</h1>
+    </nav>
+
+    <!-- Sidebar -->
     <div class="sidebar">
         <a href="#">Dashboard</a>
-        <a href="#">Users</a>
-        <a href="#">Movies</a>
+        <a href="{{ route('AdminPanel.ViewUser') }}">Users</a>
+        <a href="{{ route('AdminPanel.ViewMovie') }}">Movies</a>
         <a href="#">Reservation</a>
         <a href="#">Profile</a>
         <a href="#">Logout</a>
     </div>
 
     <!-- Main content -->
-    <div class="container mt-5">
-        @yield('content')
+    <div class="main-content">
+        <div class="container mt-5">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Bootstrap JS and dependencies -->

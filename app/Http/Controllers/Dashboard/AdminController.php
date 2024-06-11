@@ -11,5 +11,9 @@ class AdminController extends Controller
     {
         return view ('dashboard.Layout.adminpage');
     }
+    public function addUser()
+    {
+        return view('AdminPanel.AddUser');
+    }
 
 }
