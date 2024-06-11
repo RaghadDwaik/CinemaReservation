@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('show__movies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('movie_id')->constrained('movies');   //Created a foreign key constraint on this column referencing the "id" column of the movies table.
-            $table->date('release_date'); // format('dd, mm, YY');
+            $table->date('film_release_date'); // format('dd, mm, YY');
             $table->time('show_time');   //format('H:i');
             $table->integer('sinema_hall_no');
             $table->integer('total_seat');
