@@ -24,6 +24,8 @@
                 <input class="search-input" type="text" id="search-query" placeholder="Enter movie name..."
                     required />
                 <img class="icon" src="{{ asset('img/search/search.png') }}" alt="Search Icon" />
+                <!-- Suggestions Container -->
+                <div id="suggestions" class="suggestions-box"></div>
             </div>
             <div class="info">
                 <img class="icon" src="{{ asset('img/search/schedule.png') }}" alt="Schedule Icon" />
@@ -41,6 +43,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function() {
+            // Handle typing in the search input for real-time suggestions
+            $('#search-query').on('input', function() {
+                const query = $(this).val();
+                if (query.length > 2) {
+                    $.ajax({
+                        url: "{{ route('dashboard.movies.search') }}",
+                        method: 'GET',
+                        data: {
+                            query: query
+                        },
+                        success: function(response) {
+                            $('#suggestions').html(response);
+                        },
+                        error: function(xhr) {
+                            console.error(xhr);
+                        }
+                    });
+                } else {
+                    $('#suggestions').empty();
+                }
+            });
+
+            // Handle the search button click for full search results
             $('#search-button').on('click', function() {
                 const query = $('#search-query').val();
                 $.ajax({
@@ -51,12 +76,7 @@
                     },
                     success: function(response) {
                         $('#search-results').html(response);
-                        // Apply inline styles for testing
-                        $('.description').css({
-                            'color': '#FFA500',
-                            'font-size': '16px',
-                            'line-height': '1.5'
-                        });
+                        $('#suggestions').empty(); // Clear suggestions
                     },
                     error: function(xhr) {
                         console.error(xhr);

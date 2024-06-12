@@ -86,5 +86,13 @@ Route::delete('AdminPanel/ViewMovie/{movie}', [DashboardController::class, 'dele
 require __DIR__.'/auth.php';
 
 
-// Added a new route for the AJAX search request
+// Route for full search results
 Route::get('/search', [MovieController::class, 'ajaxSearch'])->name('dashboard.movies.search');
+// Route for search suggestions
+Route::get('/search-suggestions', [MovieController::class, 'searchSuggestions'])->name('dashboard.movies.searchSuggestions');
+
+// Route for showing movie details
+Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
+
+
+
