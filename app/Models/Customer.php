@@ -15,4 +15,9 @@ class Customer extends Model
         'email',
         'password',
     ];
+    //Laravel will automatically link the id column of the Customer table to the Customer_id column of the reservation table.
+    public function reservations(){
+        return $this->hasMany(Reservation::class);
+        
+    }
 }
