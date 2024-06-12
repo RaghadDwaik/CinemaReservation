@@ -33,7 +33,7 @@ Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name
 
 
 //home
-Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index');
+Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
 
 //Type of Movies
 Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
