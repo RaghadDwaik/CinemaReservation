@@ -11,12 +11,12 @@ class Reservation extends Model
     protected $fillable=[
         'ticketprice',
         'creation_date',
-        'customer_id',
+        'user_id',
         'show_movie_id',
     ];
 
-    public function customers(){
-        return $this->belongsTo(Customer::class);
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 
     public function coupons(){

@@ -86,7 +86,7 @@
                 
 
 
-                        @if(Auth::check())
+    @if(Auth::check())
     <div class="dropdown">
         <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user"></i>
