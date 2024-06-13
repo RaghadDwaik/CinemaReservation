@@ -6,15 +6,15 @@
                         <div class="row align-items-center">
                             <div class="col-lg-3">
                                 <div class="footer-logo">
-                                    <a href="{{route('dashboard.movies.index')}}"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
+                                    <a href="{{route('dashboard.movies.movie')}}"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-lg-9">
                                 <div class="footer-menu">
                                     <nav>
                                         <ul class="navigation">
-                                            <li><a href="{{route('dashboard.movies.index')}}">Home</a></li>
-                                            <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
+                                            <li><a href="{{route('dashboard.movies.movie')}}">Home</a></li>
+                                            <li><a href="{{route('dashboard.movies.movie')}}">Movies</a></li>
                                             <li><a href="index.html">tv show</a></li>
                                             <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
                                             <li><a href="{{route('dashboard.Layout.coupon')}}">Coupon</a></li>
@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2024. All Rights Reserved By <a href="{{route('dashboard.movies.index')}}">Movflx</a></p>
+                                <p>Copyright &copy; 2024. All Rights Reserved By <a href="{{route('dashboard.movies.movie')}}">Movflx</a></p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

@@ -154,8 +154,8 @@
     <header>
         <nav>
             <ul class="navbar">
-                <li><a href="{{ route('dashboard.movies.index') }}">Home</a></li>
-                <li><a href="{{ route('dashboard.movies.index') }}">Movies</a></li>
+                <li><a href="{{ route('dashboard.movies.movie') }}">Home</a></li>
+                <li><a href="{{ route('dashboard.movies.movie') }}">Movies</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Coupon</a></li>
@@ -274,7 +274,7 @@
     <!-- show time area end -->
 
     <!-- footer-area -->
-    @include('dashboard.movies.footer')
+    @include('dashboard.Layout.footer')
     <!-- footer-area-end -->
     <!-- JS here -->
     <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
