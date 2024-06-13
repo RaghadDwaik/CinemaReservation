@@ -245,10 +245,23 @@
                         $hall_no=$item->sinema_hall_no;
                         @endphp
                         @endif
+                        @if(Auth::check())
                         <div class="col">
-                            <a href="#" class="badge badge-primary show-time">{{$item->show_time}}</a>
-                        </div>
-                    </div>
+                                   
+                                        <a href="#" class="badge badge-primary show-time"  >{{ $item->show_time }}</a>
+                                   
+                                </div>
+                        @else
+                        <a href="{{ route('login') }}" class="badge badge-primary show-time" >{{ $item->show_time }}</a>
+                        
+                                
+
+
+                               
+      
+
+@endif  
+ </div>
                     @endif
 
                     @endforeach
@@ -279,6 +292,8 @@
     <script src="{{ asset('js/aos.js') }}"></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
