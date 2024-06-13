@@ -1,37 +1,133 @@
+/* about page */
+
 .about-h1 {
     padding: 15px;
-    margin:20px auto;
+    margin: 20px auto;
     padding: 50px;
 }
+
 .about-us {
     font-family: Arial, sans-serif;
     background-color: #a19d9d;
     background-image: url(Default_cinema_3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background:linear-gradient(rgba(8, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://cdn.leonardo.ai/users/5c25d9a6-1a61-4a76-bf73-2135085fe194/generations/7cffcf02-b52a-45c5-9011-2cce21ba01fe/Default_cinema_3.jpg);
+    background: linear-gradient(rgba(8, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+        url(https://cdn.leonardo.ai/users/5c25d9a6-1a61-4a76-bf73-2135085fe194/generations/7cffcf02-b52a-45c5-9011-2cce21ba01fe/Default_cinema_3.jpg);
     color: #fff;
     line-height: 1.6;
 }
+
 .about-container {
     max-width: 90%;
     margin: auto;
     padding: 20px;
 }
-.about-h1 , .about-h2 {
+
+.about-h1,
+.about-h2 {
     text-align: center;
 }
+
 .about-h2 {
     border-bottom: 3px solid #dddf6f;
     padding-bottom: 10px;
     margin-top: 20px;
 }
+
 .about-p {
     margin-bottom: 20px;
 }
+
 .about-li {
-    
+
     margin: auto;
     padding: 10px;
 }
+
+/* show page */
+
+.more-details-title {
+    color: #EEC438;
+}
+
+.movie-details-area1 {
+    padding: 60px 0;
+    background: url("{{asset('img/bg/movie_details_bg.jpg') }}");
+    /* Image background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.movie-details-content1 {
+    background-color: rgba(44, 44, 44, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    /* Center the image vertically */
+    margin-top: 80px;
+}
+
+.movie-details-info {
+    margin-left: 20px;
+}
+
+.movie-details-content1 img {
+    margin-bottom: 20px;
+    max-height: 500px;
+    /* Ensure the image doesn't get too large */
+}
+
+.title {
+    color: #EEC438;
+    font-size: 24px;
+    margin-top: 20px;
+    /* text-align: center; */
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+    /* Add spacing between list items */
+}
+
+.movie-details-info p {
+    margin-bottom: 20px;
+    /* Add space below the description */
+}
+
+/* Css show time area  */
+
+.date__container {
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 4;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgb(238 196 56 / 30%);
+    border-radius: 12px;
+    /* background-color:#EEC438; */
+}
+
+.badge-date-light {
+    color: rgb(238 196 56);
+    border-bottom: 2px solid #EEC438;
+}
+
+
+
+.h3-hall-no {
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+
+
+/* Css show time area  */

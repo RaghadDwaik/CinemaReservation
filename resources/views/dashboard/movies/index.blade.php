@@ -103,6 +103,7 @@
     <script src="{{ asset('js/aos.js') }}"></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    @stack('styles')
 </body>
 
 </html>
