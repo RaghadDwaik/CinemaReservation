@@ -12,7 +12,7 @@ class MovieController extends Controller
     public function index(){
 
         $movie = Movie::all(); // Ensure you are fetching all movies
-        return view('dashboard.movies.movie', compact('movie')); // Pass the movies variable to the view
+        return view('dashboard.movies.all-movie', compact('movie')); // Pass the movies variable to the view
     }
     
 // view movie for admin

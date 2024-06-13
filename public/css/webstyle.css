@@ -1,0 +1,37 @@
+.about-h1 {
+    padding: 15px;
+    margin:20px auto;
+    padding: 50px;
+}
+.about-us {
+    font-family: Arial, sans-serif;
+    background-color: #a19d9d;
+    background-image: url(Default_cinema_3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background:linear-gradient(rgba(8, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://cdn.leonardo.ai/users/5c25d9a6-1a61-4a76-bf73-2135085fe194/generations/7cffcf02-b52a-45c5-9011-2cce21ba01fe/Default_cinema_3.jpg);
+    color: #fff;
+    line-height: 1.6;
+}
+.about-container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+.about-h1 , .about-h2 {
+    text-align: center;
+}
+.about-h2 {
+    border-bottom: 3px solid #dddf6f;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.about-p {
+    margin-bottom: 20px;
+}
+.about-li {
+    
+    margin: auto;
+    padding: 10px;
+}
