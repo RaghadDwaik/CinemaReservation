@@ -76,41 +76,9 @@
                     $hall_no=$item->sinema_hall_no;
                     @endphp
                     @endif
-
                     <div class="col">
                         <a href="#" class="badge badge-primary show-time">{{$item->show_time}}</a>
                     </div>
-
-                    <div class="contant col">
-                        <!-- I used if to not repeat the hall number -->
-                        @if($item->sinema_hall_no !== $hall_no )
-                        <h3 class="h3-hall-no">Hall : {{$item->sinema_hall_no}}</h3>
-                        @php
-                        $hall_no=$item->sinema_hall_no;
-                        @endphp
-                        @endif
-                        @if(Auth::check())
-                        <div class="col">
-                                   
-                                        <a href="#" class="badge badge-primary show-time"  >{{ $item->show_time }}</a>
-                                   
-                                </div>
-                        @else
-                        <a href="{{ route('login') }}" class="badge badge-primary show-time" >{{ $item->show_time }}</a>
-                        
-                                
-
-
-                               
-      
-
-@endif  
- </div>
-                    @endif
-
-                    @endforeach
-                    @if($id_movie==0)<h2 href="#" class="col badge badge-date-light">No Show Time</h2>@endif
-
                 </div>
                 @endif
 
@@ -118,33 +86,6 @@
                 @if($id_movie==0)<h2 href="#" class="col badge badge-date-light">No Show Time</h2>@endif
             </div>
         </div>
-
-    </section>
-    <!-- show time area end -->
-
-    <!-- footer-area -->
-    @include('dashboard.Layout.footer')
-    <!-- footer-area-end -->
-    <!-- JS here -->
-    <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.odometer.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.appear.js') }}"></script>
-    <script src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="{{ asset('js/ajax-form.js') }}"></script>
-    <script src="{{ asset('js/wow.min.js') }}"></script>
-    <script src="{{ asset('js/aos.js') }}"></script>
-    <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-</body>
-
 
     </div>
 </section>
