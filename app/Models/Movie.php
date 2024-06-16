@@ -24,5 +24,6 @@ class Movie extends Model
     public function Show_Movies(){
         return $this -> hasMany(Show_Movie::class);
     }
+    
 }
 
