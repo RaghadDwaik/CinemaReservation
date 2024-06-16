@@ -12,7 +12,7 @@ class MovieController extends Controller
     public function index(){
 
         $movie = Movie::all(); // Ensure you are fetching all movies
-        return view('dashboard.movies.movie', compact('movie')); // Pass the movies variable to the view
+        return view('dashboard.movies.all-movie', compact('movie')); // Pass the movies variable to the view
     }
     
 // view movie for admin
@@ -27,25 +27,25 @@ class MovieController extends Controller
     public function animation(){
         $movie = Movie::all();
         $anmation = "Animation";
-        return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
     }
 
     public function comedy(){
         $movie = Movie::all();
         $anmation = "Comedy";
-        return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
     }
 
     public function action(){
         $movie = Movie::all();
         $anmation = "Action";
-        return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
     }
 
     public function drama(){
         $movie = Movie::all();
         $anmation = "Drama";
-        return view('dashboard.movies.allmovies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
     }
 
     // Method to handle the AJAX search request - Updated

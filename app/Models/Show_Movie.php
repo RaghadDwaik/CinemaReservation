@@ -24,5 +24,10 @@ class Show_Movie extends Model
     public function movies(){
         return $this->belongsTo(Movie::class);
     }
+
+    public function reservations(){
+        return $this->hasMany(Reservation::class);
+        
+    }
     
 }
