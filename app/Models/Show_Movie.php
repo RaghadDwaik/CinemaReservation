@@ -9,7 +9,7 @@ class Show_Movie extends Model
 {
     use HasFactory;
 
-    protected $table = 'show_movies'; // Ensure this matches your actual table name
+    protected $table = 'show__movies'; // Ensure this matches your actual table name
 
     protected $fillable = [
         'movie_id',
