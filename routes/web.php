@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -31,7 +31,9 @@ Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.mo
 
 Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name('dashboard.Layout.coupon');
 
-
+//register
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store']);
 //home
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
 
@@ -92,6 +94,3 @@ Route::get('/search-suggestions', [MovieController::class, 'searchSuggestions'])
 
 // Route for showing movie details
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
-
-
-
