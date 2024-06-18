@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
+use Illuminate\Support\Facades\Auth;
 
 
 class DashboardController extends Controller
@@ -74,6 +75,19 @@ class DashboardController extends Controller
         return view('AdminPanel.EditUser',compact('user'));
     }
 
+    
+    public function profile()
+    {
+        $fields = Auth::user();
+        return view('AdminPanel.Profile',compact('fields'));
+    }
+
+    public function updateProfile()
+    {
+        $user = Auth::user();
+        return view('AdminPanel.profileUpdate',compact('user'));
+    }
+
    
 
     public function updateUser(Request $request , User $user)
@@ -95,6 +109,20 @@ class DashboardController extends Controller
     {
         $user->delete();
         return redirect()->route('AdminPanel.ViewUser')->with('success', 'user deleted successfully');
+    }
+
+    public function MultiAuth()
+    {
+       
+        if (Auth::check()) {
+            $usertype = Auth::user()->usertype;
+            if ($usertype == 'user') {
+                return view('dashboard.movies.movie');
+            } else if ($usertype == 'admin') {
+                return view('AdminPanel.AdminDashboard');
+            }
+        }
+        return redirect()->route('dashboard.movies.movie');
     }
    
 }
