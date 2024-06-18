@@ -62,6 +62,11 @@ class MovieController extends Controller
             return view('dashboard.Layout.search-results', compact('movies'))->render();
         }
 
+    // payment function
+    public function payment(){
+        return view('dashboard.movies.payment');
+    }
+
 
 
 
