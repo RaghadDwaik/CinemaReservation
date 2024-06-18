@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->double('ticketprice');
             $table->date('creation_date');
-            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('coupon_id')->nullable()->constrained('coupons');
             $table->foreignId('show_movie_id')->constrained('show__movies');
 

@@ -20,7 +20,7 @@
                     <div class="card-header bg-dark text-white">Movies</div> <!-- Added bg-dark and text-white classes -->
                     <div class="card-body">
                         <p>Change your Movies here.</p>
-                        <button class="btn btn-dark">View Movies</button>
+                        <a href="{{ route('AdminPanel.ViewMovie') }}" class="btn btn-dark">View Movies</a>
                     </div>
                 </div>
             </div>
@@ -29,16 +29,16 @@
                     <div class="card-header bg-dark text-white">Reservation</div> <!-- Added bg-dark and text-white classes -->
                     <div class="card-body">
                         <p>View Reservation here.</p>
-                        <button class="btn btn-dark">View Reservation</button>
+                        <a href="#" class="btn btn-dark">View Reservation</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header bg-dark text-white">Profile</div> <!-- Added bg-dark and text-white classes -->
+                    <div class="card-header bg-dark text-white">Coupon</div> <!-- Added bg-dark and text-white classes -->
                     <div class="card-body">
                         <p>Manage your profile here.</p>
-                        <button class="btn btn-dark">View Profile</button>
+                        <a href="#" class="btn btn-dark">View Coupons</a>
                     </div>
                 </div>
             </div>

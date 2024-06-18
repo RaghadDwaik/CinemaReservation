@@ -53,7 +53,7 @@
                 $hall_no=0;
                 @endphp
 
-                @foreach($showMovie as $item)
+                @foreach($showMovies as $item)
                 <!-- {{$date}} -->
                 <!-- if the selected movie->id is equal to the $item->movie_id  in a table showMovie -->
                 <!-- and The movie release date is after or equal to the current date -->
