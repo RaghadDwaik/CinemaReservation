@@ -1,0 +1,52 @@
+body {
+    margin-top: 20px;
+    background: #171b22;
+}
+
+.panel-title {
+    display: inline;
+    font-weight: bold;
+}
+
+.panel {
+    padding: 12px;
+}
+
+.panel-heading {
+    margin: -12px;
+}
+
+.checkbox.pull-right {
+    margin: 0;
+}
+
+.pl-ziro {
+    padding-left: 0px;
+}
+
+.container {
+
+    margin-top: 4%;
+    margin-left: 19%;
+
+    max-width: 970px;
+}
+
+.panel-body {
+
+    margin-top: 12px;
+}
+
+
+.btn {
+    font-size: 18px;
+    background-color: #171b22;
+    border-color: #171b22;
+    color: #EEC438;
+}
+
+.btn:hover {
+    background-color: #EEC438;
+    border-color: #EEC438;
+    color: #171b22;
+}
