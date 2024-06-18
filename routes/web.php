@@ -35,6 +35,10 @@ Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name
 //home
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
 
+//Payment
+Route::get('/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
+
+
 //Type of Movies
 Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
 Route::get('dashboard/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
