@@ -43,6 +43,7 @@
                             <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
