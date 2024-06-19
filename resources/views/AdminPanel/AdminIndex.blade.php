@@ -62,13 +62,15 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="#">Dashboard</a>
+        <a href="{{ route('AdminPanel.AdminDashboard') }}">Dashboard</a>
         <a href="{{ route('AdminPanel.ViewUser') }}">Users</a>
         <a href="{{ route('AdminPanel.ViewMovie') }}">Movies</a>
         <a href="#">Reservation</a>
-        <a href="#">Profile</a>
-        <a href="#">Logout</a>
-    </div>
+        <a href="{{ route('AdminPanel.Profile') }}">Profile</a>
+        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-black text-light" >Logout</button>
+                        </form>    </div>
 
     <!-- Main content -->
     <div class="main-content">

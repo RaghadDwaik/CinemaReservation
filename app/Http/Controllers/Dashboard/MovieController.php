@@ -70,7 +70,12 @@ class MovieController extends Controller
         return view('dashboard.movies.show', compact('movie', 'showMovies'));
     }
 
- 
+
+    // payment function
+    public function payment(){
+        return view('dashboard.movies.payment');
+    }
+
 
   
 
