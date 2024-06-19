@@ -18,11 +18,13 @@ class Movie extends Model
         'run_time',
         'release_date',
         'type',
+        'trailer_url',
     ];
 
     //Laravel will automatically link the id column of the movie table to the movie_id column of the Show_Movie table.
     public function Show_Movies(){
         return $this -> hasMany(Show_Movie::class);
     }
+
 }
 

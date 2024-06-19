@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('run_time');
             $table->date('release_date');
             $table->string('type');
+            $table->string('trailer_url')->nullable(); // إضافة عمود trailer_url
             $table->timestamps();
         });
     }
@@ -33,3 +34,4 @@ return new class extends Migration
         Schema::dropIfExists('movies');
     }
 };
+

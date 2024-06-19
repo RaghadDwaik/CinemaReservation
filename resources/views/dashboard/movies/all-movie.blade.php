@@ -75,23 +75,28 @@
                          <i class="fas fa-star"></i>
                          <i class="fas fa-star"></i>
                          <i class="fas fa-star"></i>
+
                      </li>
-                     <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch
-                             Now</a></li>
+
+                     <li><a href="{{$item->trailer_url}}" class="popup-video btn">Watch Now</a></li>
+
+                     {{-- <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch
+                             Now</a></li> --}}
+
                      <li><a href="{{route('dashboard.movies.show',$item->id)}}" class="btn">Details</a></li>
                  </ul>
              </div>
              <div class="movie-content">
                  <div class="top">
-                     <h5 class="title"><a href="movie-details.html">{{ $item -> movie_name}}</a></h5>
-                     <span class="date">{{ $item -> release_date}}</span>
+                     <h5 class="title"><a href="{{route('dashboard.movies.show',$item->id)}}">{{ $item->movie_name}}</a></h5>
+                     <span class="date">{{ $item->release_date}}</span>
                  </div>
                  <div class="bottom">
                      <ul>
 
                          <li>
-                             <span class="duration"><i class="far fa-clock"></i>{{$item -> run_time}}</span>
-                             <span class="rating"><i class="fas fa-thumbs-up"></i>{{$item -> rating}}</span>
+                             <span class="duration"><i class="far fa-clock"></i>{{$item->run_time}}</span>
+                             <span class="rating"><i class="fas fa-thumbs-up"></i>{{$item->rating}}</span>
                          </li>
                      </ul>
                  </div>

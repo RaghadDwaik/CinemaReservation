@@ -23,12 +23,6 @@ class MovieController extends Controller
         return view('AdminPanel.ViewMovie', compact('movies')); 
     }
 
-    public function show($id)
-    {
-        $movie = Movie::findOrFail($id);
-        $showMovie = Show_Movie::all();
-        return view('dashboard.movies.show', compact('movie' , 'showMovie'));
-    }
 
     
     public function animation(){
@@ -55,13 +49,28 @@ class MovieController extends Controller
         return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
     }
 
-    // Method to handle the AJAX search request
+    // Method to handle the AJAX search request - Updated
     public function ajaxSearch(Request $request)
-        {
-            $query = $request->input('query');
-            $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get();
-            return view('dashboard.Layout.search-results', compact('movies'))->render();
-        }
+    {
+        $query = $request->input('query');
+        $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get();
+        return view('dashboard.Layout.search-results', compact('movies'))->render();
+    }
+    
+    public function searchSuggestions(Request $request)
+    {
+        $query = $request->input('query');
+        $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get(['id', 'movie_name', 'image']);
+        return response()->json($movies);
+    }
+    
+    public function show($id)
+    {
+        $movie = Movie::findOrFail($id);
+        $showMovies = Show_Movie::where('movie_id', $id)->get();
+        return view('dashboard.movies.show', compact('movie', 'showMovies'));
+    }
+
 
     // payment function
     public function payment(){
@@ -70,6 +79,7 @@ class MovieController extends Controller
     }
 
 
+  
 
 
 }

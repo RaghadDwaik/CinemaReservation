@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -31,7 +31,9 @@ Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.mo
 
 Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name('dashboard.Layout.coupon');
 
-
+//register
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store']);
 //home
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
 
@@ -58,6 +60,7 @@ Route::middleware('auth')->group(function () {
 
 
 
+Route::get('/home',[DashboardController::class,'MultiAuth'])->name('AdminPanel.AdminDashboard');
 
 
 //search view
@@ -72,22 +75,29 @@ Route::get('dashboard/Layout/aboutus', function () {
 })->name('dashboard.Layout.aboutus');
 
 //Admin Route
-Route::get('AdminPanel/AdminDashboard',[DashboardController::class,'index'])->middleware('admin');
-Route::get('AdminPanel/ViewUser',[DashboardController::class,'user'])->name('AdminPanel.ViewUser');
-Route::get('AdminPanel/ViewMovie',[MovieController::class,'View'])->name('AdminPanel.ViewMovie');
-Route::get('AdminPanel/AddMovie',[DashboardController::class,'addMovie'])->name('AdminPanel.AddMovie');
-Route::get('AdminPanel/AddUser',[DashboardController::class,'addUser'])->name('AdminPanel.AddUser');
-Route::post('AdminPanel/store', [DashboardController::class, 'store'])->name('AdminPanel.store');
-Route::post('AdminPanel/storeMovie', [DashboardController::class, 'storeM'])->name('AdminPanel.storeM');
-Route::get('AdminPanel/EditMovie/{movie}/edit', [DashboardController::class, 'editMovie'])->name('AdminPanel.EditMovie');
-Route::put('AdminPanel/EditMovie/{movie}/update', [DashboardController::class, 'updateMovie'])->name('AdminPanel.updateM');
-Route::get('AdminPanel/EditUser/{user}/edit', [DashboardController::class, 'editUser'])->name('AdminPanel.EditUser');
-Route::put('AdminPanel/EditUser/{user}/update', [DashboardController::class, 'updateUser'])->name('AdminPanel.updateU');
-Route::delete('AdminPanel/ViewUser/{user}', [DashboardController::class, 'deleteU'])->name('AdminPanel.deleteU');
-Route::delete('AdminPanel/ViewMovie/{movie}', [DashboardController::class, 'deleteM'])->name('AdminPanel.deleteM');
+Route::get('AdminPanel/AdminDashboard',[DashboardController::class,'index'])->name('AdminPanel.AdminDashboard')->middleware('admin');
+Route::get('AdminPanel/ViewUser',[DashboardController::class,'user'])->name('AdminPanel.ViewUser')->middleware('admin');
+Route::get('AdminPanel/ViewMovie',[MovieController::class,'View'])->name('AdminPanel.ViewMovie')->middleware('admin');
+Route::get('AdminPanel/AddMovie',[DashboardController::class,'addMovie'])->name('AdminPanel.AddMovie')->middleware('admin');
+Route::get('AdminPanel/AddUser',[DashboardController::class,'addUser'])->name('AdminPanel.AddUser')->middleware('admin');
+Route::post('AdminPanel/store', [DashboardController::class, 'store'])->name('AdminPanel.store')->middleware('admin');
+Route::post('AdminPanel/storeMovie', [DashboardController::class, 'storeM'])->name('AdminPanel.storeM')->middleware('admin');
+Route::get('AdminPanel/EditMovie/{movie}/edit', [DashboardController::class, 'editMovie'])->name('AdminPanel.EditMovie')->middleware('admin');
+Route::put('AdminPanel/EditMovie/{movie}/update', [DashboardController::class, 'updateMovie'])->name('AdminPanel.updateM')->middleware('admin');
+Route::get('AdminPanel/EditUser/{user}/edit', [DashboardController::class, 'editUser'])->name('AdminPanel.EditUser')->middleware('admin');
+Route::put('AdminPanel/EditUser/{user}/update', [DashboardController::class, 'updateUser'])->name('AdminPanel.updateU')->middleware('admin');
+Route::delete('AdminPanel/ViewUser/{user}', [DashboardController::class, 'deleteU'])->name('AdminPanel.deleteU')->middleware('admin');
+Route::delete('AdminPanel/ViewMovie/{movie}', [DashboardController::class, 'deleteM'])->name('AdminPanel.deleteM')->middleware('admin');
+Route::get('AdminPanel/Profile',[DashboardController::class,'profile'])->name('AdminPanel.Profile')->middleware('admin');
+Route::put('AdminPanel/profileUpdate', [DashboardController::class, 'updateProfile'])->name('AdminPanel.profileUpdate');
 
 require __DIR__.'/auth.php';
 
 
-// Added a new route for the AJAX search request
+// Route for full search results
 Route::get('/search', [MovieController::class, 'ajaxSearch'])->name('dashboard.movies.search');
+// Route for search suggestions
+Route::get('/search-suggestions', [MovieController::class, 'searchSuggestions'])->name('dashboard.movies.searchSuggestions');
+
+// Route for showing movie details
+Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
