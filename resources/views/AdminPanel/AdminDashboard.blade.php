@@ -38,7 +38,7 @@
                     <div class="card-header bg-dark text-white">Coupon</div> <!-- Added bg-dark and text-white classes -->
                     <div class="card-body">
                         <p>Manage your profile here.</p>
-                        <a href="#" class="btn btn-dark">View Coupons</a>
+                        <a href="{{ route('AdminPanel.ViewCoupons') }}" class="btn btn-dark">View Coupons</a>
                     </div>
                 </div>
             </div>
