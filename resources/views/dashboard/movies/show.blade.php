@@ -60,8 +60,7 @@
                     <div class="col">
 
                         <a href="{{ $movie->trailer_url }}" class="btn-watch-trailer btn btn-lg" target="_blank"><i class="fas fa-play"></i> Watch Trailer</a>
-                        <a href="#" class="badge badge-primary show-time">{{ $item->show_time }}</a>
-
+                    
                         <a href="{{route('dashboard.movies.paymant')}}" class="badge badge-primary show-time">{{$item->show_time}}</a>
 
                     </div>

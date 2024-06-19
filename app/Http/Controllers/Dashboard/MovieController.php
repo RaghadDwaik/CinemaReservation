@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Coupon;
 use App\Models\Movie;
 use App\Models\Show_Movie;
 use Illuminate\Http\Request;
@@ -73,7 +74,8 @@ class MovieController extends Controller
 
     // payment function
     public function payment(){
-        return view('dashboard.movies.payment');
+        $coupon = Coupon::all();
+        return view('dashboard.movies.payment' , compact('coupon'));
     }
 
 
