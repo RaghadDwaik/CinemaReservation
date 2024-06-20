@@ -8,16 +8,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
-
     <link rel="stylesheet" href="{{asset('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')}}">
-    <link rel="stylesheet"
-        href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css')}}">
-
+    <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{ asset('css/paymentstyle.css') }}">
-
-    <!------ Include the above in your HEAD tag ---------->
 
 <body>
 
@@ -35,28 +28,24 @@
                                         <h2 class="bill-head">Ticket price</h2>
                                         <small class="bill-price">100 TL</small>
                                     </div>
-
                                 </div>
-
 
                                 <div class="row">
                                     <div class="col-lg-7 col-8 mt-4 ">
                                         <h2 class="bill-head">Selected Coupon</h2>
-                                        <small class="bill-price"> <span class="output">No selected yet</span>%</small>
+                                        <small class="bill-price"> <span id="selected_Coupon">No selected
+                                                yet</span>%</small>
                                     </div>
-
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-12 red-bg">
                                         <p class="bill-price" id="total-label" style="color: #EEC438; 
                                         font-size: 28px;
-                                        font-weight: bold;">Total Price</p>
-                                        @php
-                                        $price=100 *1 ;
-                                        @endphp
+                                        font-weight: bold;">Total Price </p>
                                         <h2 class="bill-head" id="total" style="color: white; 
                                         font-size: 24px;
-                                        font-weight: bold;">90 TL</h2>
+                                        font-weight: bold;">100 TL</h2>
                                         <!-- <small class="bill-price" id="total-label">Price includes all taxes</small> -->
                                     </div>
                                 </div>
@@ -79,10 +68,8 @@
                                             <label class="pay"> Card Number </label>
                                         </div>
                                         <div class="col-md-12">
-
                                             <input type="text" name="cardno" id="cr_no"
                                                 placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
-
                                         </div>
                                     </div>
 
@@ -102,7 +89,7 @@
                                     <div class="row">
                                         <div class="col-4 col-md-6">
                                             <label class="pay" for=" ">Coupon</label>
-                                            <select id="coupon" name="coupon">
+                                            <select id="coupon" name="coupon" onchange="getSelectedCoupon()">
                                                 <option value=" ">Select Coupon</option>
 
                                                 @foreach($coupon as $item)
@@ -116,8 +103,7 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <a href="#" onclick="getSelectedCoupon()"
-                                                class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+                                            <a href="#" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
                                             </p>
                                         </div>
                                     </div>
@@ -135,10 +121,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     function getSelectedCoupon() {
-        selectElement =
-            document.querySelector('#coupon');
+        // This function gets the selected value
+        //The discount percentage is displayed in the designated place
+        //The total price is calculated and displayed
+        var selected = document.getElementById('#selected_Coupon'); //id selected Coupon
+        var total = document.getElementById('#total'); //id total price
+        selectElement = document.querySelector('#coupon');
         output = selectElement.value;
-        document.querySelector('.output').textContent = output;
+        document.querySelector('#selected_Coupon').textContent = output;
+        total_price = 100 - ((output / 100) * 100); //100 = price tiket
+        document.querySelector('#total').textContent = total_price; //Show total price
     }
     </script>
 </body>
