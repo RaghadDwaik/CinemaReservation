@@ -29,6 +29,8 @@
 </main>
 
 <!-- show time area -->
+
+
 <section class="movie-area movie-bg .movie-details-content" data-background="{{asset('img/bg/movie_bg.jpg')}}">
     <div class="container">
         <div class="row date__container">
