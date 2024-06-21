@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
+use App\Models\Coupon;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -19,6 +21,12 @@ class DashboardController extends Controller
     public function user(){
         $users = User::all();
         return view ('AdminPanel.ViewUser', compact('users'));
+
+    }
+
+    public function coupon(){
+        $coupon = Coupon::all();
+        return view ('AdminPanel.ViewCoupons', compact('coupon'));
 
     }
     public function addUser()
@@ -78,15 +86,20 @@ class DashboardController extends Controller
     
     public function profile()
     {
-        $fields = Auth::user();
-        return view('AdminPanel.Profile',compact('fields'));
+        $user = Auth::user();
+        return view('AdminPanel.Profile',compact('user'));
     }
 
-    public function updateProfile()
-    {
-        $user = Auth::user();
-        return view('AdminPanel.profileUpdate',compact('user'));
-    }
+    public function updateProfile(Request $request, User $user)
+{
+    $user->update(
+        $request->all()
+    );
+    session()->flash('update', 'Profile updated successfully');
+    return redirect()->route('AdminPanel.Profile');
+}
+
+    
 
    
 

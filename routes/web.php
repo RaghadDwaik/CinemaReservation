@@ -89,7 +89,8 @@ Route::put('AdminPanel/EditUser/{user}/update', [DashboardController::class, 'up
 Route::delete('AdminPanel/ViewUser/{user}', [DashboardController::class, 'deleteU'])->name('AdminPanel.deleteU')->middleware('admin');
 Route::delete('AdminPanel/ViewMovie/{movie}', [DashboardController::class, 'deleteM'])->name('AdminPanel.deleteM')->middleware('admin');
 Route::get('AdminPanel/Profile',[DashboardController::class,'profile'])->name('AdminPanel.Profile')->middleware('admin');
-Route::put('AdminPanel/profileUpdate', [DashboardController::class, 'updateProfile'])->name('AdminPanel.profileUpdate');
+Route::put('AdminPanel/profileUpdate/{user}', [DashboardController::class, 'updateProfile'])->name('AdminPanel.profileUpdate')->middleware('admin');
+Route::get('AdminPanel/ViewCoupons',[DashboardController::class,'coupon'])->name('AdminPanel.ViewCoupons')->middleware('admin');
 
 require __DIR__.'/auth.php';
 

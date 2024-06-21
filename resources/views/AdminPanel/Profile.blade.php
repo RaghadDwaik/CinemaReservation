@@ -1,18 +1,33 @@
 @extends('AdminPanel.AdminIndex')
 
 @section('title')
-Admin Profile 
+    Admin Profile
 @endsection
 
 @section('content')
     <h2 class="mb-4">Admin Profile</h2>
     <div class="section" style="width:70%; margin:auto; border: 1px solid black; padding:10px;">
-        <form action="{{ route('AdminPanel.profileUpdate') }}" method="POST">
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        @if (session('update'))
+            <div class="alert alert-success">
+                {{ session('update') }}
+            </div>
+        @endif
+        <form action="{{ route('AdminPanel.profileUpdate', $user->id) }}" method="POST">
             @csrf
             @method('PUT')
             
             <div class="mb-3">
-                <label for="username" class="form-label">Admin Name</label>
+                <label for="username" class="form-label">User Name</label>
                 <input type="text" name="name" value="{{ $user->name }}" class="form-control"  placeholder="U.N" required>
             </div>
             
@@ -42,8 +57,6 @@ Admin Profile
         </form>
     </div>
 @endsection
-
-
 
 @push('styles')
     <link rel="stylesheet" href="style.css">
