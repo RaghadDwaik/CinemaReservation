@@ -78,7 +78,12 @@ class MovieController extends Controller
         return view('dashboard.movies.payment' , compact('coupon'));
     }
 
+    public function paymentsuccess(){
+    
+        session()->flash('success', 'Payment was made successfully, we will send the ticket to your email');
 
+        redirect()->route('dashboard.movies.movie');
+    }
   
 
 
