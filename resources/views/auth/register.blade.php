@@ -36,7 +36,6 @@
         max-width: 400px;
         padding: 30px 30px;
         text-align: center;
-        /* توسيط محتوى الكارد */
         border-radius: 16px;
     }
 
