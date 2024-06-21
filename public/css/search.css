@@ -78,6 +78,11 @@
   gap: 0.5rem;
 }
 
+.date{
+  border:  solid #e2a147 1px;
+  
+}
+
 .search-button {
   padding: 0.5rem 1rem;
   background-color: #e2a147;
