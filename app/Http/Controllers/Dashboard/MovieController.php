@@ -82,7 +82,7 @@ class MovieController extends Controller
     
         session()->flash('success', 'Payment was made successfully, we will send the ticket to your email');
 
-        redirect()->route('dashboard.movies.movie');
+       return redirect()->route('dashboard.movies.movie');
     }
   
 
