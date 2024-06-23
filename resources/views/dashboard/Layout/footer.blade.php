@@ -17,7 +17,7 @@
                                     <li><a href="{{route('dashboard.movies.index')}}">Movies</a></li>
                                     <li><a href="index.html">tv show</a></li>
                                     <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
-                                    <li><a href="{{route('dashboard.Layout.coupon')}}">Coupon</a></li>
+                                    <li><a href="{{route('dashboard.Layout.event')}}">Event</a></li>
                                 </ul>
                                 <div class="footer-search">
                                     <form action="#">

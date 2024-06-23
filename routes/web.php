@@ -29,7 +29,7 @@ use App\Http\Controllers\Dashboard\CouponController;
 // details of each movie
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
 
-Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name('dashboard.Layout.coupon');
+Route::get('/dashboard/Layout/event', [CouponController::class, 'index'])->name('dashboard.Layout.event');
 
 //register
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
