@@ -13,7 +13,7 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Movie Name</label>
                 <input type="text" name="movie_name" class="form-control" id="exampleFormControlInput1"
-                    placeholder="U.N" required>
+                     required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">language</label>
@@ -21,9 +21,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">image</label>
-                <input name="image" class="form-control" id="exampleFormControlTextarea1" rows="3" required>
-            </div>
+    <label for="exampleFormControlFile1" class="form-label">Image</label>
+    <input name="image" type="file" class="form-control" id="exampleFormControlFile1" required>
+</div>
+
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">description</label>

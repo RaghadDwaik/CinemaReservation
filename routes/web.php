@@ -96,6 +96,11 @@ Route::delete('AdminPanel/ViewMovie/{movie}', [DashboardController::class, 'dele
 Route::get('AdminPanel/Profile',[DashboardController::class,'profile'])->name('AdminPanel.Profile')->middleware('admin');
 Route::put('AdminPanel/profileUpdate/{user}', [DashboardController::class, 'updateProfile'])->name('AdminPanel.profileUpdate')->middleware('admin');
 Route::get('AdminPanel/ViewCoupons',[DashboardController::class,'coupon'])->name('AdminPanel.ViewCoupons')->middleware('admin');
+Route::get('AdminPanel/EditCoupon/{coupon}/edit', [DashboardController::class, 'editCoupon'])->name('AdminPanel.EditCoupon')->middleware('admin');
+Route::put('AdminPanel/EditCoupon/{coupon}/update', [DashboardController::class, 'updateC'])->name('AdminPanel.updateC')->middleware('admin');
+Route::delete('AdminPanel/ViewCoupons/{coupon}', [DashboardController::class, 'deleteC'])->name('AdminPanel.deleteC')->middleware('admin');
+Route::get('AdminPanel/AddCoupon',[DashboardController::class,'addCoupon'])->name('AdminPanel.AddCoupon')->middleware('admin');
+Route::post('AdminPanel/storeC', [DashboardController::class, 'storeC'])->name('AdminPanel.storeC')->middleware('admin');
 
 require __DIR__.'/auth.php';
 
