@@ -17,10 +17,10 @@
                     <div class="card-body">
                         <p class="card-text" style="font-size: 1.2rem; color: white;">We care for our visitors and from time to time we provide small gifts to them. You are the lucky one today!</p>
                         <div class="d-flex justify-content-between">
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom">Get it now
+                            <a href="{{route('dashboard.movies.index')}}" class="btn btn-custom">Get it now
                                 <i class="fa fa-gem"></i>
                             </a>
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
+                            <a href="{{route('dashboard.movies.index')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
                         </div>
                     </div>
                 </div>
@@ -31,10 +31,10 @@
                     <div class="card-body">
                         <p class="card-text" style="font-size: 1.2rem; color: white;">We care for our visitors and from time to time we provide small gifts to them. You are the lucky one today!</p>
                         <div class="d-flex justify-content-between">
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom">Get it now
+                            <a href="{{route('dashboard.movies.index')}}" class="btn btn-custom">Get it now
                                 <i class="fa fa-gem"></i>
                             </a>
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
+                            <a href="{{route('dashboard.movies.index')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
                         </div>
                     </div>
                 </div>

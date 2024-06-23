@@ -4,25 +4,21 @@
 
  <!-- breadcrumb-area -->
  <section class="hero">
-     <div class="movie-info">
-         <h1>Harry Potter</h1>
-         <p>An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family
-             and the terrible evil that haunts the magical world....
-             <span style="color:#EEC438">See more</span>
-         </p>
-         <div class="movie-details">
-             <span class="duration">1h 55m</span>
-             <span class="language">ENGLISH</span>
-         </div>
-         <div class="tags">
-             <span>Adventure</span>
-             <span>Family</span>
-             <span>Fantasy</span>
-         </div>
-         <button class="book-now">Book Now!</button>
-     </div>
+            <div class="movie-info" id="{{ $movieWithId->id}}">
+                <h1>{{ $movieWithId->movie_name }}</h1>
+                <p>{{ $movieWithId->description }}
+                </p>
+                <div class="movie-details">
+                    <span class="duration">{{ $movieWithId->run_time }}</span>
+                    <span class="language">{{ $movieWithId->language }}</span>
+                </div>
+                <div class="tags">
+                    <span>{{ $movieWithId->type }}</span>
+                </div>
+                <button class="book-now">Book Now!</button>
+            </div>
 
- </section>
+        </section>
  <!-- breadcrumb-area-end -->
 
  <!-- movie-area -->

@@ -35,7 +35,7 @@ Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store']);
 //home
-Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
+Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index');
 
 //Payment
 Route::get('/movies/{id}/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
@@ -53,14 +53,19 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.updateProfile');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
 
-Route::get('/home',[DashboardController::class,'MultiAuth'])->name('AdminPanel.AdminDashboard');
+Route::get('/home',[DashboardController::class,'MultiAuth']);
 
 
 //search view

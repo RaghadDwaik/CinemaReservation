@@ -88,6 +88,11 @@
                          align-items: center;
                          gap: 0.5rem;
                        }
+
+                       .date{
+                        border:  solid #e2a147 1px;
+  
+                        }
                        
                        .search-button {
                          padding: 0.5rem 1rem;
@@ -119,7 +124,7 @@
             </div>
             <div class="info">
                 <img class="icon" src="{{ asset('img/search/schedule.png') }}" alt="Schedule Icon" />
-                <h1 style="font-size: small;">Date 29/Jun/2024</h1>
+                    <input type="date" class="date">
             </div>
             <div class="info">
                 <img class="icon" src="{{ asset('img/search/movie.png') }}" alt="Cinema Icon" />

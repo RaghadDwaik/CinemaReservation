@@ -130,12 +130,11 @@ class DashboardController extends Controller
         if (Auth::check()) {
             $usertype = Auth::user()->usertype;
             if ($usertype == 'user') {
-                return view('dashboard.movies.movie');
+                return view('dashboard.movies.index');
             } else if ($usertype == 'admin') {
                 return view('AdminPanel.AdminDashboard');
             }
         }
-        return redirect()->route('dashboard.movies.movie');
     }
    
 }
