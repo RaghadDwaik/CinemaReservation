@@ -174,7 +174,7 @@ class ShowMovieSeeder extends Seeder
             'movie_id'=>11,
             'film_release_date' => date('2024-10-7'),
             'show_time'=> '4:00',
-            'sinema_hall_no'=> 1,
+            'sinema_hall_no'=> 2,
             'total_seat'=>30,
             'available_seat'=> 7,
             'available_age'=> 20,

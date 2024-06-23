@@ -19,7 +19,6 @@
                     </ul>
                     <div class="mt-4">
                         <a href="{{ $movie->trailer_url }}" class="btn-watch-trailer btn btn-lg" target="_blank"><i class="fas fa-play"></i> Watch Trailer</a>
-                        <a href="#" class="btn-book-now btn btn-lg"><i class="fas fa-ticket-alt"></i> Book Now</a>
                     </div>
                 </div>
             </div>
@@ -62,8 +61,10 @@
                     <div class="col">
 
                     
-                        <a href="{{route('dashboard.movies.paymant')}}" class="badge badge-primary show-time">{{$item->show_time}}</a>
-
+                    @auth
+                    <a href="{{route('dashboard.movies.paymant')}}" class="badge badge-primary show-time">{{$item->show_time}}</a>@else
+    <a href="{{ route('login') }}" class="badge badge-primary show-time">{{ $item->show_time }}</a>
+@endauth
                     </div>
                 </div>
                 @endif

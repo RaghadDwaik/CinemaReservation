@@ -13,7 +13,11 @@ class MovieController extends Controller
     public function index(){
 
         $movie = Movie::all(); // Ensure you are fetching all movies
-        return view('dashboard.movies.all-movie', compact('movie')); // Pass the movies variable to the view
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
+        return view('dashboard.movies.all-movie', compact('movie' ,'movieWithId')); // Pass the movies variable to the view
     }
     
 // view movie for admin

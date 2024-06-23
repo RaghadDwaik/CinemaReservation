@@ -35,7 +35,7 @@ Route::get('/dashboard/Layout/coupon', [CouponController::class, 'index'])->name
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store']);
 //home
-Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
+Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index');
 
 //Payment
 Route::get('/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
@@ -65,7 +65,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/home',[DashboardController::class,'MultiAuth'])->name('AdminPanel.AdminDashboard');
+Route::get('/home',[DashboardController::class,'MultiAuth']);
 
 
 //search view

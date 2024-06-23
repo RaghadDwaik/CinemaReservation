@@ -4,7 +4,7 @@
     <header>
         <nav>
             <ul class="navbar">
-                <li><a href="{{route('dashboard.movies.movie')}}">Home</a></li>
+                <li><a href="{{route('dashboard.movies.index')}}">Home</a></li>
                 <li><a href="#movies">Movies</a></li>
                 <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
                 <li><a href="#contact-us">Contact Us</a></li>
@@ -24,7 +24,7 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
+                        <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
 
                         <!-- Logout Form -->
                         <form action="{{ route('logout') }}" method="POST">
