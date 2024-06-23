@@ -11,11 +11,33 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/plugin/style-confirmaition.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/webstyles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/webstyle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
-   
+ 
+	
     <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS for confirmation -->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/plugin/animate.css')}}" />
+	<!-- <link rel="stylesheet" type="text/css" href="{{asset('css/plugin/bootstrap.css')}}" /> -->
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/font-awesome.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/fonts.css')}}" />  
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/flaticon.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/owl.carousel.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/owl.theme.default.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/dl-menu.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/nice-select.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/magnific-popup.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/venobox.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('js/plugin/rs_slider/layers.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('js/plugin/rs_slider/navigation.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('js/plugin/rs_slider/settings.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('css/plugin/responsive.css')}}" />
+	<!-- <link rel="stylesheet" id="theme-color" type="text/css" href="#"/>   -->
+
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -42,6 +64,9 @@
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+
+
+  
     <style>
     .btn-dark {
         background-color: #343a40;
@@ -103,6 +128,32 @@
     <script src="{{ asset('js/aos.js') }}"></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+<!-- js to confirmation screen -->
+    <script src="{{ asset('js/js_/jquery_min.js') }}"></script>
+	<script src="{{ asset('js/js_/modernizr.js') }}"></script>
+	<script src="{{ asset('js/js_/bootstrap.js') }}"></script>
+	<script src="{{ asset('js/js_/owl.carousel.js') }}"></script>
+	<!-- <script src="{{ asset('js/js_/jquery.dlmenu.js') }}"></script> -->
+	<script src="{{ asset('js/js_/jquery.sticky.js') }}"></script>
+	<script src="{{ asset('js/js_/jquery.nice-select.min.js') }}"></script>
+	<script src="{{ asset('js/js_/jquery.magnific-popup.js') }}"></script>
+	<script src="{{ asset('js/js_/jquery.bxslider.min.js') }}"></script>
+	<script src="{{ asset('js/js_/venobox.min.js') }}"></script>
+	<script src="{{ asset('js/js_/smothscroll_part1.js') }}"></script>
+	<script src="{{ asset('js/js_/smothscroll_part2.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/jquery.themepunch.revolution.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/jquery.themepunch.tools.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.addon.snow.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.actions.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.carousel.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.kenburn.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.layeranimation.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.migration.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.navigation.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.parallax.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.slideanims.min.js') }}"></script>
+	<script src="{{ asset('js/js_/plugin/rs_slider/revolution.extension.video.min.js') }}"></script>
+	<script src="{{ asset('js/js_/custom.js') }}"></script>
     @stack('styles')
 </body>
 
