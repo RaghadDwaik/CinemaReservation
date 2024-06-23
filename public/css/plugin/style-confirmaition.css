@@ -1,0 +1,337 @@
+/*---------------- st Booking Conformation Start --------------*/
+body, html {
+	
+	background-image:linear-gradient(90deg, rgba(0, 0, 0, 0.9) 33.18%, rgba(0, 0, 0, 0) 80.52%),url('/img/confirmation_screen/back_.jpg');
+background-size: cover;
+background-attachment: fixed;
+}
+
+.st_bcc_main_wrapper{
+	padding-top:100px;
+	padding-bottom:100px;
+	display:inline-block;
+	width:100%;
+	text-align:left;
+}
+.st_bcc_heading_wrapper{
+	text-align:center;
+	border-bottom:2px solid #D8D8D8;
+	padding-bottom:60px;
+}
+.st_bcc_heading_wrapper i{
+	font-size: 60px;
+    color: #6cc77c;
+}
+.st_bcc_heading_wrapper h3{
+	padding-top:30px;
+	font-size: 32px;
+color: wheat;
+letter-spacing: 0.5px;
+}
+.st_bcc_heading_wrapper h3 span{
+	font-size: 32px;
+color:#EEC438;
+letter-spacing: 0.5px;
+font-weight:600;
+}
+.st_bcc_ticket_boxes_wrapper{
+	background: #c9c9c9;
+border-radius: 8px;
+box-shadow: 0 2px 8px 0 rgba(0,0,0,0.12);
+position:static;
+margin-top:60px;
+padding:30px;
+}
+.st_bcc_ticket_boxes_wrapper:after{
+	content:'';
+	width:50px;
+	height:50px;
+	background:#09090B;
+	position:absolute;
+	left:-25px;
+	top:30%;
+	border-radius:100%;
+}
+.st_bcc_ticket_boxes_wrapper:before{
+	content:'';
+	width:50px;
+	height:50px;
+	background: rgb(1, 1, 1) ;
+	position:absolute;
+	right:-25px;
+	top:30%;
+	border-radius:100%;
+}
+.st_bcc_tecket_top_hesder{
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:60px;
+	border-bottom: 1px dashed #979797;
+}
+.st_bcc_tecket_top_hesder p{
+	font-size: 24px;
+color: #ff4444;
+text-transform:uppercase;
+font-weight:600;
+}
+.st_bcc_tecket_top_hesder span{
+	font-size: 16px;
+color: rgba(0,0,0,0.38);
+text-align: center;
+font-weight:600;
+padding-top:10px;
+display:inline-block;
+}
+.st_bcc_tecket_bottom_right_wrapper{
+	float:left;
+	width:200px;
+	text-align:center;
+	padding-left: 47px;
+}
+.st_bcc_tecket_bottom_left_wrapper{
+	float:left;
+	width:calc(100% - 200px);
+	position:relative;
+}
+.st_purchase_img{
+	position:absolute;
+	    top: 50px;
+    right: 220px;
+}
+.st_purchase_img2{
+	right:190px;
+}
+.st_bcc_tecket_bottom_left_wrapper:after{
+	content:'';
+	background: #ded0d0;
+	height:1px;
+	width:100%;
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:-15px;
+}
+.st_bcc_tecket_bottom_hesder{
+	background: rgb(96 96 96 / 12%);
+	padding:30px;
+	margin-top:40px;
+}
+.st_bcc_tecket_bottom_inner_left{
+	float:left;
+	width:auto;
+}
+.st_bcc_tecket_bottom_inner_right{
+	float:right;
+	width:auto;
+	text-align:center;
+}
+.st_bcc_teckt_bot_inner_img{
+	float:left;
+	width:auto;
+}
+.st_bcc_teckt_bot_inner_img_cont{
+	float:left;
+	width:auto;
+	padding-left:20px;
+}
+.st_bcc_teckt_bot_inner_img_cont h4{
+	font-size: 16px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.57px;
+font-weight:800;
+}
+.st_bcc_teckt_bot_inner_img_cont h5{
+font-size: 14px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.7px;
+padding-top:5px;
+font-weight:500;
+}
+.st_bcc_teckt_bot_inner_img_cont h3{
+font-size: 14px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.7px;
+padding-top:10px;
+font-weight:500;
+}
+.st_bcc_teckt_bot_inner_img_cont h6{
+font-size: 14px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.7px;
+font-weight:500;
+padding-top:15px;
+    line-height: 19px;
+}
+.st_bcc_tecket_bottom_inner_right i{
+	color:#111;
+	font-size:26px;
+}
+.st_bcc_main_main_wrapper{
+	text-align:center;
+}
+.st_bcc_tecket_bottom_inner_right h3{
+	font-size: 16px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.8px;
+text-align: center;
+line-height: 21px;
+font-weight:600;
+padding-top:10px;
+}
+.st_bcc_tecket_bottom_inner_right h3 span{
+	font-size:12px;
+}
+.st_bcc_tecket_bottom_right_wrapper h4{
+	font-size: 16px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 1px;
+padding-top:10px;
+    line-height: 25px;
+}
+.st_bcc_tecket_bottom_left_price_wrapper{
+	float:left;
+	width:calc(100% - 200px);
+	margin-top: 30px;
+}
+.st_bcc_tecket_bottom_left_price_wrapper h4{
+	float:left;
+	font-size: 18px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.9px;
+font-weight:700;
+}
+.st_bcc_tecket_bottom_left_price_wrapper h5{
+	float:right;
+font-size: 18px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0.9px;
+font-weight:700;
+}
+.st_bcc_ticket_boxes_bottom_wrapper{
+	text-align:center;
+}
+.st_bcc_ticket_boxes_bottom_wrapper p{
+	font-size: 16px;
+color: rgba(255, 255, 255, 0.87);
+letter-spacing: 0.57px;
+text-align: center;
+line-height: 24px;
+margin-top:30px;
+}
+.st_bcc_ticket_boxes_bottom_wrapper ul{
+	display:inline-block;
+	margin-top:30px;
+}
+.st_bcc_ticket_boxes_bottom_wrapper li{
+	float:left;
+	margin-right:10px;
+}
+.st_bcc_ticket_boxes_bottom_wrapper li:first-child a {
+        width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    background: #ff4444;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid #ff4444;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.st_bcc_ticket_boxes_bottom_wrapper li:first-child a:hover {
+    background: transparent;
+    color: #ff4444;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.st_bcc_ticket_boxes_bottom_wrapper li:last-child a {
+        width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ff4444;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid #ff4444;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.st_bcc_ticket_boxes_bottom_wrapper li:last-child a:hover {
+    background: #ff4444;
+    color: #fff;
+    border: 1px solid #ff4444;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.st_bcc_heading_wrapper h4{
+	font-size: 16px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 1px;
+font-weight:800;
+}
+.st_bcc_heading_wrapper_history{
+	padding-bottom:0;
+	border:0;
+}
+.st_bcc_ticket_boxes_wrapper_history{
+	margin-top:30px;
+}
+.booking_history_span{
+	font-size: 18px !important;
+color: rgba(0,0,0,0.38) !important;
+font-weight:600 !important;
+}
+.st_bcc_heading_wrapper_history_second{
+	margin-top:60px;
+}
+.st_bcc_ticket_boxes_bottom_wrapper h5{
+	padding-top:50px;
+}
+.st_bcc_ticket_boxes_bottom_wrapper h5 a{
+	font-size: 14px;
+color: #F06292;
+letter-spacing: 0.7px;
+font-weight:600;
+text-decoration:underline;
+}
+.st_bcc_main_wrapper_history{
+	padding-bottom:0;
+}
+.booking_type_back{
+	background: #f6f6f6;
+}
+
+.float_left {
+    float: left;
+    width: 100%;
+}
+
+.img-confirmation {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 100px;
+  }
+/*---------------- st Booking Conformation End --------------*/
