@@ -38,8 +38,8 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.movie');
 
 //Payment
-Route::get('/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
-Route::get('payment/success',[MovieController::class,'paymentsuccess'])->name('payment.success');
+Route::get('/movies/{id}/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
+Route::get('/movies/{id}/confirmationScreen',[MovieController::class,'confirmation_payment'])->name('movies.confirmationScreen');
 
 //Type of Movies
 Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');

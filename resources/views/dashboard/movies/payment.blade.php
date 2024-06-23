@@ -60,9 +60,13 @@
 			                        <div class='radio' data-value="paypal"><img src="https://i.imgur.com/5QFsx7K.jpg" width="200px" height="60px"></div>
 			                        <br> </div> -->
 
-                                    <form action="{{route('payment.success')}}" method="GET">
+                                    <form action="{{route('movies.confirmationScreen',  ['id' => $show_Movie->id]) }}" method="GET">
                                         @csrf
-
+                                        @if($show_Movie)
+        <h6>Show Time: {{$show_Movie->id}}</h6>
+    @else
+        <h6>Show time not available</h6>
+    @endif
                                         <label class="pay">Name on Card</label>
                                         <input type="text" name="holdername" 
                                              placeholder="John Smith" id="name" required>
@@ -108,7 +112,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <!-- <a href="#" class="btn btn-success btn-lg btn-block"  role="button">Pay</a> -->
-                                                <button class="btn btn-primary" type="submit">pay</button>
+                                                <button class="btn btn-primary btn-lg btn-block" type="submit">pay</button>
                                             </div>
                                         </div>
                                     </form>
