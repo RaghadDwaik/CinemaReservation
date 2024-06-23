@@ -63,6 +63,8 @@
                     
                     @auth
                    <a href="{{route('dashboard.movies.paymant' , $item->id )}}" class="badge badge-primary show-time">{{$item->show_time}}</a>
+                   @else
+
     <a href="{{ route('login') }}" class="badge badge-primary show-time">{{ $item->show_time }}</a>
 @endauth
 
