@@ -11,6 +11,6 @@ class CouponController extends Controller
     public function index()
 {
     $coupon = Coupon::all();
-    return view('dashboard.Layout.coupon', compact('coupon'));
+    return view('dashboard.Layout.event', compact('coupon'));
 }
 }

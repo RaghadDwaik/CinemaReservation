@@ -1,51 +1,32 @@
 @extends('AdminPanel.AdminIndex')
 
-@section('title')
-    Add Movie
-@endsection
-
 @section('content')
 
-{{-- <div class="container">
-    <ul>
-        @foreach ($coupon as $coupon)
-        <li>{{ $coupon->code }} - {{ $coupon->description }} - Save {{ $coupon->discount }}%</li>
-        @endforeach
-    </ul>
-</div> --}}
-
-<div class="d-flex justify-content-center align-items-center" style="height: 100vh; background: url('{{asset('img/background.jpg')}}') no-repeat center center fixed; background-size: cover;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-lg" style="border: none; background-color: rgba(33, 37, 41, 0.8);">
-                    <img class="card-img-top" src="{{asset('img/coupon/Coupon-01.jpg')}}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text" style="font-size: 1.2rem; color: white;">We care for our visitors and from time to time we provide small gifts to them. You are the lucky one today!</p>
-                        <div class="d-flex justify-content-between">
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom">Get it now
-                                <i class="fa fa-gem"></i>
-                            </a>
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
+<h1>All Coupons</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <form class="form-inline">
+        <!-- Add your form elements here if needed -->
+    </form>
+    <a href="{{ route('AdminPanel.AddCoupon') }}" class="btn btn-primary">Add Coupon</a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <ul class="list-group">
+                @foreach ($coupon as $coupon)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ $coupon->code }} - <strong>{{ $coupon->discount }}%</strong></span>
+                        <div class="btn-group" role="group" aria-label="Coupon Actions">
+                            <a href="{{ route('AdminPanel.EditCoupon',$coupon->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('AdminPanel.deleteC', $coupon->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-lg" style="border: none; background-color: rgba(33, 37, 41, 0.8);">
-                    <img class="card-img-top" src="{{asset('img/coupon/Coupon-02.jpg')}}" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text" style="font-size: 1.2rem; color: white;">We care for our visitors and from time to time we provide small gifts to them. You are the lucky one today!</p>
-                        <div class="d-flex justify-content-between">
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom">Edit Coupon
-                                <i class="fa fa-gem"></i>
-                            </a>
-                            <a href="{{route('dashboard.movies.movie')}}" class="btn btn-custom-outline" data-dismiss="modal">No, thanks</a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>
@@ -56,33 +37,21 @@
 <script src="script.js"></script>
 
 @push('styles')
-<style>
-    .btn-custom,
-    .btn-custom-outline {
-        background-color: transparent;
-        color: white;
-        border: 2px solid #228EE5;
-        border-radius: 10px;
-        padding: 10px 20px;
-        text-transform: uppercase;
-        font-weight: bold;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .btn-custom:hover,
-    .btn-custom-outline:hover {
-        background-color: #0e0d0d80;
-        color: #EEC438;
-    }
-</style>
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .list-group-item {
+            font-size: 18px;
+        }
+        .btn-group {
+            display: flex;
+        }
+        .btn {
+            margin-left: 5px;
+        }
+    </style>
 @endpush
 
 @endsection
-
-@push('styles')
-    <link rel="stylesheet" href="style.css">
-@endpush
-
-@push('scripts')
-    <script src="script.js"></script>
-@endpush

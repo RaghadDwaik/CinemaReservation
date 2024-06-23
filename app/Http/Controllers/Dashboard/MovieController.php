@@ -77,8 +77,8 @@ class MovieController extends Controller
 
 
     // payment function
-    public function payment( $id ){
-
+  
+    public function payment($id ){
         $coupon = Coupon::all();
         $show_Movie = Show_Movie::findOrFail($id);
         return view('dashboard.movies.payment' , compact('coupon' , 'show_Movie'));

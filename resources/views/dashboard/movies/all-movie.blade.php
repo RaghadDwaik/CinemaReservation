@@ -14,9 +14,8 @@
                 </div>
                 <div class="tags">
                     <span>{{ $movieWithId->type }}</span>
+                <a href="{{route('dashboard.movies.show',$movieWithId->id)}}" class="btn">Show Details</a>
                 </div>
-                <button class="book-now">Book Now!</button>
-            </div>
 
         </section>
  <!-- breadcrumb-area-end -->
