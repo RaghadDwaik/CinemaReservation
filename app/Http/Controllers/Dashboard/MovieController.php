@@ -73,16 +73,20 @@ class MovieController extends Controller
 
 
     // payment function
-    public function payment(){
+    public function payment(Show_Movie $show_Movie ){
         $coupon = Coupon::all();
-        return view('dashboard.movies.payment' , compact('coupon'));
+       
+        return view('dashboard.movies.payment' , compact('coupon' , 'show_Movie'));
     }
 
-    public function paymentsuccess(){
-    
-        session()->flash('success', 'Payment was made successfully, we will send the ticket to your email');
+    public function confirmation_payment($id){
+        // Retrieve the Show_Movie instance by its ID
+        $show_Movie = Show_Movie::findOrFail($id);
 
-        redirect()->route('dashboard.movies.movie');
+        return view('dashboard.movies.confirmation-screen', compact('show_Movie'));
+       
+        // session()->flash('success', 'Payment was made successfully, we will send the ticket to your email');
+       
     }
   
 
