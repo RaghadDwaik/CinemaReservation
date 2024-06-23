@@ -7,7 +7,8 @@
         <div class="container">
             <div class="movie-details-content1">
                 <div>
-                    <img src="{{ asset($movie->image) }}" alt="{{ $movie->movie_name }}" class="img-fluid rounded shadow-lg">
+                    <img src="{{ asset($movie->image) }}" alt="{{ $movie->movie_name }}"
+                        class="img-fluid rounded shadow-lg">
                 </div>
                 <div class="movie-details-info">
                     <h2 class="title display-4 font-weight-bold">{{ $movie->movie_name }}</h2>
@@ -18,7 +19,8 @@
                         <li><span class="font-weight-bold">Rating:</span> {{ $movie->rating }}</li>
                     </ul>
                     <div class="mt-4">
-                        <a href="{{ $movie->trailer_url }}" class="btn-watch-trailer btn btn-lg" target="_blank"><i class="fas fa-play"></i> Watch Trailer</a>
+                        <a href="{{ $movie->trailer_url }}" class="btn-watch-trailer btn btn-lg" target="_blank"><i
+                                class="fas fa-play"></i> Watch Trailer</a>
                     </div>
                 </div>
             </div>
@@ -60,11 +62,12 @@
                     @endif
                     <div class="col">
 
-                    
-                    @auth
-                   <a href="{{route('dashboard.movies.paymant' , $item->id )}}" class="badge badge-primary show-time">{{$item->show_time}}</a>
-    <a href="{{ route('login') }}" class="badge badge-primary show-time">{{ $item->show_time }}</a>
-@endauth
+
+                        @auth
+                        <a href="{{route('dashboard.movies.paymant' , $item->id )}}"
+                            class="badge badge-primary show-time">{{$item->show_time}}</a>
+                        <a href="{{ route('login') }}" class="badge badge-primary show-time">{{ $item->show_time }}</a>
+                        @endauth
 
                     </div>
                 </div>

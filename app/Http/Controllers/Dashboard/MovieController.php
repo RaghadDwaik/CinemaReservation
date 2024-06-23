@@ -77,21 +77,23 @@ class MovieController extends Controller
 
 
     // payment function
-    public function payment(Show_Movie $show_Movie ){
+    public function payment( $id ){
+
         $coupon = Coupon::all();
-       
+        $show_Movie = Show_Movie::findOrFail($id);
         return view('dashboard.movies.payment' , compact('coupon' , 'show_Movie'));
+
+        
     }
 
     public function confirmation_payment($id){
+
         // Retrieve the Show_Movie instance by its ID
-        $show_Movie = Show_Movie::findOrFail($id);
-
-
-        return view('dashboard.movies.confirmation-screen', compact('show_Movie'));
+        $Show_Movie = Show_Movie::findOrFail($id);
        
-        // session()->flash('success', 'Payment was made successfully, we will send the ticket to your email');
-       
+        // Assuming movie_id is the foreign key
+        $Movie = Movie::findOrFail($Show_Movie->movie_id);
+        return view('dashboard.movies.confirmation-screen', compact('Show_Movie' , 'Movie'));
 
     }
   

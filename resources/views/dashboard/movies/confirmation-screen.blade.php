@@ -20,26 +20,35 @@
                          </div>
                          <div class="st_bcc_tecket_bottom_hesder float_left">
                              <div class="st_bcc_tecket_bottom_left_wrapper">
+                                 @if($Show_Movie)
+
                                  <div class="st_bcc_tecket_bottom_inner_left">
+
                                      <div class="st_bcc_teckt_bot_inner_img">
-                                         <img class="img-confirmation" src="{{ asset($movie->image) }}" alt="img">
+                                         <img class="img-confirmation" src="{{ asset($Movie->image) }}" alt="img">
                                      </div>
                                      <div class="st_bcc_teckt_bot_inner_img_cont">
-                                         <h4>{{$movie->movie_name}}</h4>
-                                         <!-- <h5>Malayalam, 2D</h5> -->
-                                        
-                                          <h6>Carnival: Artech Central Mall,<br>
-                                             Trivandrum Audi-5</h6>
+
+                                         <h4>Movie Name: <span>{{$Movie->movie_name}}</span></h4>
+                                         <h4>Sinema Hall No: <span>{{ $Show_Movie->sinema_hall_no }}</span> </h4>
+
+                                         <h4>{{ $Show_Movie->film_release_date }} <span>,</span>
+                                             {{ $Show_Movie->show_time }}</h4>
+                                         @else
+                                         <h4>Show time not available</h4>
+                                         @endif
+
                                      </div>
+
                                      <div class="st_purchase_img">
                                          <img src="{{ asset('img/confirmation_screen/pur2.png') }}" alt="img">
                                      </div>
                                  </div>
-                                 <div class="st_bcc_tecket_bottom_inner_right"> <i class="fas fa-chair"></i>
+                                 <!-- <div class="st_bcc_tecket_bottom_inner_right"> <i class="fas fa-chair"></i>
                                      <h3>2 TICKETS <br>
                                          <span>EXECUTIV - K1, K2</span>
                                      </h3>
-                                 </div>
+                                 </div> -->
                              </div>
                              <div class="st_bcc_tecket_bottom_right_wrapper">
                                  <img src="{{ asset('img/confirmation_screen/qr.png') }}" alt="img">
@@ -47,7 +56,7 @@
                              </div>
                              <div class="st_bcc_tecket_bottom_left_price_wrapper">
                                  <h4>Total Amount</h4>
-                                 <h5>₹373.00</h5>
+                                 <h5>373.00TL</h5>
                              </div>
                          </div>
                      </div>
@@ -55,7 +64,7 @@
                          <p>You can access your ticket from your Profile. We will send you
                              <br>an e-Mail/SMS Confirmation with in 15 Minutes.
                          </p>
-                        
+
                      </div>
                  </div>
              </div>
