@@ -60,18 +60,26 @@
 			                        <div class='radio' data-value="paypal"><img src="https://i.imgur.com/5QFsx7K.jpg" width="200px" height="60px"></div>
 			                        <br> </div> -->
 
-                                    <form action="{{route('movies.confirmationScreen',  ['id' => $show_Movie->id]) }}" method="GET">
-       
+                                    <form
+                                        action="{{ route('dashboard.reservation.store',  ['id' => $Show_Movie->id]) }}"
+                                        method="POST"> @csrf
+                                        @if($Show_Movie)
+                                        <input type="hidden" name="show_movie_id" value="{{ $Show_Movie->id }}">@endif
+                                        <input type="hidden" name="creation_date" value="{{ now()->format('Y-m-d')}}">
+                                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                        <!-- Assuming the authenticated user is making the reservation -->
+
                                         <label class="pay">Name on Card</label>
-                                        <input type="text" name="holdername" 
-                                             placeholder="John Smith" id="name" required>
+                                        <input type="text" name="holdername" placeholder="John Smith" id="name"
+                                            required>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <label class="pay"> Card Number </label>
                                             </div>
                                             <div class="col-md-12">
                                                 <input type="text" name="cardno" id="cr_no"
-                                                    placeholder="0000-0000-0000-0000" minlength="19" maxlength="19" required>
+                                                    placeholder="0000-0000-0000-0000" minlength="19" maxlength="19"
+                                                    required>
                                             </div>
                                         </div>
 
@@ -90,24 +98,29 @@
 
                                         <div class="row">
                                             <div class="col-4 col-md-6">
-                                                <label class="pay" for=" ">Coupon</label>
-                                                <select id="coupon" name="coupon" onchange="getSelectedCoupon()">
-                                                    <option value=" ">Select Coupon</option>
+                                                <label class="pay d-flex" for=" ">Coupon</label>
+                                                <select id="coupon" name="coupon" class=" d-inline-block"
+                                                    onchange="getSelectedCoupon()">
+                                                    <option value="">Select Coupon</option>
 
-                                                    @foreach($coupon as $item)
-                                                    <option value="{{$item ->discount}}">Coupon code :
-                                                        {{$item->discount}} %
-                                                    </option>
+                                                    @foreach($Coupon as $item)
+
+                                                    <option value="{{ $item->id }}">{{ $item->discount }} </option>
+                                                    
                                                     @endforeach
+                                                </select> <label class="pay">%</label>
 
-                                                </select>
+                                                <input type="hidden" name="coupon_id" id="coupon_id" readonly>
+                                                <input type="hidden" name="ticketprice" id="ticketprice" readonly>
+
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <!-- <a href="#" class="btn btn-success btn-lg btn-block"  role="button">Pay</a> -->
-                                                <button class="btn btn-primary btn-lg btn-block" type="submit">pay</button>
+                                                <button class="btn btn-primary btn-lg btn-block"
+                                                    type="submit">pay</button>
                                             </div>
                                         </div>
                                     </form>
@@ -124,8 +137,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"> </script>
-     <script src="{{asset('js/payment.js')}}"></script>
-    <script type="text/javascript">
-   
-    </script>
+    <script src="{{asset('js/payment.js')}}"></script>
 </body>
