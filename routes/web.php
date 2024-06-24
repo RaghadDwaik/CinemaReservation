@@ -7,7 +7,8 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\CustomerController;
 use App\Http\Controllers\Dashboard\MovieController;
 use App\Http\Controllers\Dashboard\CouponController;
-
+use App\Http\Controllers\Dashboard\ReservationController;
+use App\Models\Reservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index')
 Route::get('/movies/{id}/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
 Route::get('/movies/{id}/confirmationScreen',[MovieController::class,'confirmation_payment'])->name('movies.confirmationScreen');
 
+//Reservation
+Route::get('/movies/{id}/paymant', [ReservationController::class, 'create'])->name('dashboard.reservation.create');
+Route::post('/reservation/store/{id}', [ReservationController::class, 'store'])->name('dashboard.reservation.store');
 //Type of Movies
 Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
 Route::get('dashboard/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
