@@ -54,34 +54,44 @@ class MovieController extends Controller
     }
 
    
-        public function ajaxSearch(Request $request)
-        {
-            $query = $request->input('query');
-            $date = $request->input('date');
-        
-            $movies = Movie::where('movie_name', 'LIKE', "%{$query}%");
-        
-            if ($date) {
-                $movies->whereHas('Show_Movies', function ($query) use ($date) {
-                    $query->whereDate('release_date', $date);
-                });
-            }
-        
-            $movies = $movies->get();
-        
-            
-            return view('dashboard.Layout.search-results', compact('movies'))->render();
+    public function ajaxSearch(Request $request)
+    {
+        $date = $request->input('date');
+        $query = $request->input('query');
+        $movies = [];
+        $movieN = [];
+    
+        if ($date) {
+            $movies = Show_Movie::where('film_release_date', 'LIKE', "%{$date}%")->get();
         }
-        
+    
+        if ($query) {
+            $movieN = Movie::where('movie_name', 'LIKE', "%{$query}%")->get();
+        }
+    
+        return view('dashboard.Layout.search-results', compact('movies', 'movieN'))->render();
+    }
     
     public function searchSuggestions(Request $request)
     {
+        $date = $request->input('date');
         $query = $request->input('query');
-        $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get(['id', 'movie_name', 'image']);
-        return response()->json($movies);
-
-        
+        $movies = [];
+        $movieN = [];
+    
+        if ($date) {
+            $movies = Show_Movie::where('film_release_date', 'LIKE', "%{$date}%")->get(['movie_id']);
+        }
+    
+        if ($query) {
+            $movieN = Movie::where('movie_name', 'LIKE', "%{$query}%")->get(['movie_name']);
+        }
+    
+        return response()->json(['movies' => $movies, 'movieN' => $movieN]);
     }
+    
+
+    
     
     public function show($id)
     {
