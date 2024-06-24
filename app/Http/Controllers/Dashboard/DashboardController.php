@@ -90,6 +90,8 @@ class DashboardController extends Controller
         return view('AdminPanel.Profile',compact('user'));
     }
 
+   
+
     public function updateProfile(Request $request, User $user)
 {
     $user->update(
@@ -136,6 +138,44 @@ class DashboardController extends Controller
             }
         }
     }
+
+    public function editCoupon(Coupon $coupon)
+    {
+        return view('AdminPanel.EditCoupon',compact('coupon'));
+    }
+
+    public function updatec(Request $request , Coupon $coupon)
+    {
+        $coupon->update(
+            $request->all()
+        );
+        session()->flash('update', 'Coupon updated successfully');
+        return redirect()->route('AdminPanel.ViewCoupons');
+
+
+    }
+
+    public function deleteC(Coupon $coupon)
+    {
+        $coupon->delete();
+        return redirect()->route('AdminPanel.ViewCoupons')->with('success', 'Coupon deleted successfully');
+    }
+
+    public function addCoupon()
+    {
+        return view('AdminPanel.AddCoupon');
+    }
+
+    public function storeC(Request $request)
+    {
+        Coupon::create(
+            $request->all()
+        );
+        session()->flash('success', 'Coupon created successfully');
+        return redirect()->route('AdminPanel.ViewCoupons');
+
+    }
+
    
 }
 

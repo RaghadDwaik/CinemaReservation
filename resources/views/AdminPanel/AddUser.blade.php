@@ -13,7 +13,7 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">User Name</label>
                 <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
-                    placeholder="U.N" required>
+                    required>
             </div>
 
             <div class="mb-3">
