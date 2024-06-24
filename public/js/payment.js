@@ -61,13 +61,24 @@ $(document).ready(function () {
 //The total price is calculated and displayed
 
 function getSelectedCoupon() {
-    var selected = document.getElementById('#selected_Coupon'); //id selected Coupon
+
+    // id select option
+    var selectElement = document.getElementById('coupon');
+    var selectedCouponId = selectElement.value;
+
+    // option value 
+    var selectedCouponText = selectElement.options[selectElement.selectedIndex].text;
+
     var total = document.getElementById('#total'); //id total price
-    selectElement = document.querySelector('#coupon');
-    output = selectElement.value;
-    document.querySelector('#selected_Coupon').textContent = output;
-    total_price = 100 - ((output / 100) * 100); //100 = price tiket
+    total_price = 100 - ((selectedCouponText / 100) * 100); //100 = price tiket
     document.querySelector('#total').textContent = total_price; //Show total price
+    document.querySelector('#selected_Coupon').textContent = selectedCouponText; //show selected coupon in box
+
+    document.getElementById('coupon_id').value = selectedCouponId;
+    document.getElementById('ticketprice').value = total_price;
+    
+
+
 }
 
 

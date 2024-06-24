@@ -121,11 +121,17 @@
     border-bottom: 2px solid #EEC438;
 }
 
-
-
 .h3-hall-no {
     margin-top: 20px;
     font-weight: 100;
+}
+
+.h3-seat-no {
+
+    font-weight: 100;
+    font-size: 17px;
+    margin-left: -17px;
+
 }
 
 
