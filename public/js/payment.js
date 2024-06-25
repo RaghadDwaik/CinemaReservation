@@ -65,17 +65,21 @@ function getSelectedCoupon() {
     // id select option
     var selectElement = document.getElementById('coupon');
     var selectedCouponId = selectElement.value;
-
+   
     // option value 
     var selectedCouponText = selectElement.options[selectElement.selectedIndex].text;
-
     var total = document.getElementById('#total'); //id total price
+    
+    if(selectedCouponText == "Select Coupon")
+       {selectedCouponText=0.0;} 
+    
     total_price = 100 - ((selectedCouponText / 100) * 100); //100 = price tiket
     document.querySelector('#total').textContent = total_price; //Show total price
     document.querySelector('#selected_Coupon').textContent = selectedCouponText; //show selected coupon in box
 
     document.getElementById('coupon_id').value = selectedCouponId;
     document.getElementById('ticketprice').value = total_price;
+    
     
 
 
