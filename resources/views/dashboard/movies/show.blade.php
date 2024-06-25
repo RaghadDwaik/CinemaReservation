@@ -61,25 +61,27 @@
                     @endphp
                     @endif
                     <div class="col">
+                        <h3 class="h3-seat-no">Avaliable Seat : {{ $item->available_seat }}</h3>
 
+                        <div class="col">
 
-                      
-                    
-                    @auth
-                   <a href="{{route('dashboard.movies.paymant' , $item->id )}}" class="badge badge-primary show-time">{{$item->show_time}}</a>
-                   @else
+                            @auth
+                            <a href="{{route('dashboard.reservation.create' , $item->id )}}"
+                                class="badge badge-primary show-time">{{$item->show_time}}</a>
+                            @else
 
-    <a href="{{ route('login') }}" class="badge badge-primary show-time">{{ $item->show_time }}</a>
-@endauth
+                            <a href="{{ route('login') }}"
+                                class="badge badge-primary show-time">{{ $item->show_time }}</a>
+                            @endauth
 
+                        </div>
                     </div>
+                    @endif
+                    @endforeach
+                    @if($id_movie == 0)<h2 href="#" class="col badge badge-date-light">No Show Time</h2>@endif
                 </div>
-                @endif
-                @endforeach
-                @if($id_movie == 0)<h2 href="#" class="col badge badge-date-light">No Show Time</h2>@endif
             </div>
         </div>
-    </div>
 </section>
 <!-- show time area end -->
 

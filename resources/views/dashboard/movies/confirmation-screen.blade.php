@@ -16,11 +16,11 @@
                  <div class="col-md-12">
                      <div class="st_bcc_ticket_boxes_wrapper float_left">
                          <div class="st_bcc_tecket_top_hesder float_left">
-                             <p>Your Booking is Confirmed!</p> <span>Booking ID SSST0000310644 </span>
+                             <p>Your Booking is Confirmed!</p>
                          </div>
                          <div class="st_bcc_tecket_bottom_hesder float_left">
                              <div class="st_bcc_tecket_bottom_left_wrapper">
-                                 @if($Show_Movie)
+                                 @if($Reservation)
 
                                  <div class="st_bcc_tecket_bottom_inner_left">
 
@@ -33,7 +33,8 @@
                                          <h4>Sinema Hall No: <span>{{ $Show_Movie->sinema_hall_no }}</span> </h4>
 
                                          <h4>{{ $Show_Movie->film_release_date }} <span>,</span>
-                                             {{ $Show_Movie->show_time }}</h4>
+                                             {{ $Show_Movie->show_time }}
+                                         </h4>
                                          @else
                                          <h4>Show time not available</h4>
                                          @endif
@@ -52,11 +53,13 @@
                              </div>
                              <div class="st_bcc_tecket_bottom_right_wrapper">
                                  <img src="{{ asset('img/confirmation_screen/qr.png') }}" alt="img">
-                                 <h4>Booking ID<br>SSST0000310644</h4>
+                                 @if($Reservation)
+                                 <h4>Booking ID<br>{{$Reservation->id}}</h4>
                              </div>
                              <div class="st_bcc_tecket_bottom_left_price_wrapper">
-                                 <h4>Total Amount</h4>
-                                 <h5>373.00TL</h5>
+                                 <h4>Total Price</h4>
+
+                                 <h5>{{$Reservation->ticketprice}}</h5>@endif
                              </div>
                          </div>
                      </div>
