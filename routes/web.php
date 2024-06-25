@@ -8,6 +8,8 @@ use App\Http\Controllers\Dashboard\CustomerController;
 use App\Http\Controllers\Dashboard\MovieController;
 use App\Http\Controllers\Dashboard\CouponController;
 
+use App\Http\Controllers\Dashboard\ContactController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -112,3 +114,10 @@ Route::get('/search-suggestions', [MovieController::class, 'searchSuggestions'])
 
 // Route for showing movie details
 Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.movies.show');
+
+
+//contact
+Route::get('/dashboard/contact', [ContactController::class, 'show'])->name('dashboard.contact');
+Route::post('/dashboard/contact', [ContactController::class, 'send'])->name('dashboard.contact');
+
+
