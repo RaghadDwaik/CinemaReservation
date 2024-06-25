@@ -15,7 +15,7 @@
                     <p class="lead">{{ $movie->description }}</p>
                     <ul class="list-unstyled">
                         <li><span class="font-weight-bold">Release Date:</span> {{ $movie->release_date }}</li>
-                        <li><span class="font-weight-bold">Runtime:</span> {{ $movie->run_time }}</li>
+                        <li><span class="font-weight-bold">Runtime:</span> {{ $movie->run_time  }}</li>
                         <li><span class="font-weight-bold">Rating:</span> {{ $movie->rating }}</li>
                     </ul>
                     <div class="mt-4">
@@ -37,7 +37,7 @@
         <div class="row date__container">
             <div class="col">
                 @php
-                $date = date('1600-1-1');
+                $date = date('release_datedate');
                 $Current_date = now()->format('Y-m-d');
                 $day = now()->format('l');
                 $id_movie = 0;

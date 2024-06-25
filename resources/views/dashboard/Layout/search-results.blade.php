@@ -1,4 +1,6 @@
-@if (!$movies->isEmpty())
+@if ($movies->isEmpty())
+    <p>There are no movies </p>
+@else
     <ul class="suggestions-list"
         style="list-style-type: none; padding: 0; margin: 0; background-color: white; border: 1px solid #ddd; border-radius: 4px; max-width: 400px;">
         @foreach ($movies as $movie)
@@ -13,4 +15,5 @@
             </li>
         @endforeach
     </ul>
+   
 @endif

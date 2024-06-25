@@ -35,44 +35,86 @@ class MovieController extends Controller
     public function animation()
     {
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Animation";
-        return view('dashboard.movies.types-movies', compact('movie', 'anmation'));
+
+      
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
     public function comedy()
     {
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Comedy";
-        return view('dashboard.movies.types-movies', compact('movie', 'anmation'));
+
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
     public function action()
     {
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Action";
-        return view('dashboard.movies.types-movies', compact('movie', 'anmation'));
+
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
     public function drama()
     {
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Drama";
-        return view('dashboard.movies.types-movies', compact('movie', 'anmation'));
+
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
-    // Method to handle the AJAX search request - Updated
+   
     public function ajaxSearch(Request $request)
-    {
-        $query = $request->input('query');
-        $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get();
-        return view('dashboard.Layout.search-results', compact('movies'))->render();
-    }
+
+        {
+            $query = $request->input('query');
+            $date = $request->input('date');
+        
+            $movies = Movie::where('movie_name', 'LIKE', "%{$query}%");
+        
+            if ($date) {
+                $movies->whereHas('Show_Movies', function ($query) use ($date) {
+                    $query->whereDate('film_release_date', $date);
+                });
+            }
+        
+            $movies = $movies->get();
+        
+            
+            return view('dashboard.Layout.search-results', compact('movies'))->render();
+        }
+        
+    
 
     public function searchSuggestions(Request $request)
     {
         $query = $request->input('query');
         $movies = Movie::where('movie_name', 'LIKE', "%{$query}%")->get(['id', 'movie_name', 'image']);
         return response()->json($movies);
+
+        
     }
 
     public function show($id)

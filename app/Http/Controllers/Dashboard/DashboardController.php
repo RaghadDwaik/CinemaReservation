@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
 use App\Models\Coupon;
+use App\Models\Reservation;
+use App\Models\Show_Movie;
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -161,6 +164,12 @@ class DashboardController extends Controller
         return redirect()->route('AdminPanel.ViewCoupons')->with('success', 'Coupon deleted successfully');
     }
 
+    public function deleteR(Reservation $reservation)
+    {
+        $reservation->delete();
+        return redirect()->route('AdminPanel.ViewReservation')->with('success', 'Reservation deleted successfully');
+    }
+
     public function addCoupon()
     {
         return view('AdminPanel.AddCoupon');
@@ -176,6 +185,48 @@ class DashboardController extends Controller
 
     }
 
+    public function ViewR(){
+
+        $reservation = Reservation::all(); 
+        return view('AdminPanel.ViewReservation', compact('reservation')); 
+    }
+
+    public function addR()
+    {
+        $reservation = Reservation::all(); 
+        $movie = Movie::all(); 
+        $show=Show_Movie::all();
+        return view('AdminPanel.AddReservation',compact('reservation','movie','show'));
+    }
+
+    public function storeR(Request $request)
+    {
+        Reservation::create(
+            $request->all()
+        );
+        session()->flash('success', 'Reservation created successfully');
+        return redirect()->route('AdminPanel.ViewReservation');
+
+    }
+
+    public function editRes(Reservation $reservation)
+    {
+        $users = User::all(); // Assuming you have a User model
+        $coupons = Coupon::all(); // Assuming you have a Coupon model
+        return view('AdminPanel.EditRes', compact('reservation', 'users', 'coupons'));
+    }
+    
+
+    public function updateR(Request $request , Reservation $reservation)
+    {
+        $reservation->update(
+            $request->all()
+        );
+        session()->flash('update', 'Reservation updated successfully');
+        return redirect()->route('AdminPanel.ViewReservation');
+
+
+    }
    
 }
 

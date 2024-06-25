@@ -7,8 +7,8 @@
                 <li><a href="{{route('dashboard.movies.index')}}">Home</a></li>
                 <li><a href="#movies">Movies</a></li>
                 <li><a href="{{route('dashboard.Layout.aboutus')}}">About Us</a></li>
-                <li><a href="#contact-us">Contact Us</a></li>
-                <li><a href="{{ route('dashboard.Layout.event') }}">Event</a></li>
+                <li><a href="{{route('dashboard.contact')}}">Contact Us</a></li>
+                <li><a href="{{route('dashboard.Layout.event') }}">Event</a></li>
 
                 @if (Route::has('register'))
                 <li><a href="{{ route('register') }}" class="join-us">Join Us</a></li>
