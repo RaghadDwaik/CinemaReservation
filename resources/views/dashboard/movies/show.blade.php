@@ -53,7 +53,7 @@
                 $id_movie = 1;
                 @endphp
                 @endif
-                <div class="contant col">
+                <div class="contant">
                     @if($item->sinema_hall_no !== $hall_no)
                     <h3 class="h3-hall-no">Hall : {{ $item->sinema_hall_no }}</h3>
                     @php
