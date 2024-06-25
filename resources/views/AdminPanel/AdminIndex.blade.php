@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,50 +11,129 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
-            margin-top: 60px; /* Adjusted for navbar height */
+            margin-top: 60px;
+            /* Adjusted for navbar height */
         }
+
         .navbar {
-            background-color: #333;
-            color: #fff;
+            background-color: #121212ee !important;
+            /* Changed to dark black and added !important */
+            color: white !important;
+            /* Changed to yellow and added !important */
             padding: 10px 20px;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
         }
+
         .navbar h1 {
             margin: 0;
             font-size: 24px;
         }
+
         .sidebar {
             height: 100vh;
             position: fixed;
             width: 250px;
-            background-color: #343a40;
-            padding-top: 70px; /* Adjusted for navbar height + spacing */
-            top: 40px; /* Start below the navbar */
-            overflow-y: auto; /* Allow sidebar to scroll if content exceeds height */
+            background-color: #121212ee;
+            /* Changed to dark black */
+            padding-top: 70px;
+            /* Adjusted for navbar height + spacing */
+            top: 0;
+            /* Start from the top */
+            overflow-y: auto;
+            /* Allow sidebar to scroll if content exceeds height */
         }
+
         .sidebar a {
-            color: #ecf0f1;
+            color: white;
+            /* Changed to yellow */
             padding: 10px;
             text-decoration: none;
             display: block;
         }
+
         .sidebar a:hover {
-            background-color: #495057;
+            background-color: #EEC438;
+            /* Changed to yellow */
+            color: #121212ee;
+            /* Changed to dark black */
         }
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
             width: calc(100% - 250px);
         }
+
         .card-header {
-            background-color: #007bff;
-            color: #fff;
+            background-color: #121212ee !important;
+            /* Changed to dark black */
+            color: white !important;
+            /* Changed to yellow */
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .card-body .btn {
+            background-color: #EEC438 !important;
+            /* Changed to yellow */
+            color: #121212ee !important;
+            /* Changed to dark black */
+            border: 1px solid #121212ee !important;
+            /* Added border color black */
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .card-body .btn:hover {
+            background-color: #121212ee !important;
+            /* Changed to dark black */
+            color: #EEC438 !important;
+            /* Changed to yellow */
+        }
+
+        .btn-yellow {
+            background-color: #EEC438 !important;
+            /* Changed to yellow */
+            color: #121212ee !important;
+            /* Changed to dark black */
+            border: 1px solid #121212ee !important;
+            /* Added border color black */
+            font-weight: bold;
+        }
+
+        .btn-yellow:hover {
+            background-color: #121212ee !important;
+            /* Changed to dark black */
+            color: #EEC438 !important;
+            /* Changed to yellow */
+        }
+
+
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                /* Sidebar full width on small screens */
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar a {
+                float: left;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar bg-dark text-dark">
@@ -69,9 +149,10 @@
         <a href="{{ route('AdminPanel.ViewReservation') }}">Reservation</a>
         <a href="{{ route('AdminPanel.Profile') }}">Profile</a>
         <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="btn btn-black text-light" >Logout</button>
-                        </form>    </div>
+            @csrf
+            <button type="submit" class="btn btn-black text-light">Logout</button>
+        </form>
+    </div>
 
     <!-- Main content -->
     <div class="main-content">
@@ -85,4 +166,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
