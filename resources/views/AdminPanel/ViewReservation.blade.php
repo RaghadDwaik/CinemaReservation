@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($reservsation as $res)
+            @foreach ($reservation as $res)
             <tr>
                 <td>{{ $res->id }}</td>
                 <td>{{ $res->ticketprice }}</td>
@@ -32,6 +32,8 @@
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                 </td>
+
+
             </tr>
             @endforeach
         </tbody>

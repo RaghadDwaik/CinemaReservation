@@ -37,6 +37,11 @@
             </div>
 
             <div class="mb-3">
+                <label for="age" class="form-label">User Type </label>
+                <input type="text" name="usertype" value="{{ $user->usertype }}" class="form-control" id="age" required>
+            </div>
+
+            <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Update User</button>
             </div>
         </form>

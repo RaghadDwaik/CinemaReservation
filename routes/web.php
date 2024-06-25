@@ -101,6 +101,7 @@ Route::put('AdminPanel/EditCoupon/{coupon}/update', [DashboardController::class,
 Route::delete('AdminPanel/ViewCoupons/{coupon}', [DashboardController::class, 'deleteC'])->name('AdminPanel.deleteC')->middleware('admin');
 Route::get('AdminPanel/AddCoupon',[DashboardController::class,'addCoupon'])->name('AdminPanel.AddCoupon')->middleware('admin');
 Route::post('AdminPanel/storeC', [DashboardController::class, 'storeC'])->name('AdminPanel.storeC')->middleware('admin');
+Route::get('AdminPanel/ViewReservation',[DashboardController::class,'ViewR'])->name('AdminPanel.ViewReservation')->middleware('admin');
 
 require __DIR__.'/auth.php';
 

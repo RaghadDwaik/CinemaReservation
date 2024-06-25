@@ -31,26 +31,42 @@ class MovieController extends Controller
     
     public function animation(){
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Animation";
-        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
     }
 
     public function comedy(){
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Comedy";
-        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
     }
 
     public function action(){
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Action";
-        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
     }
 
     public function drama(){
         $movie = Movie::all();
+        $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
+        if (!$movieWithId) {
+            return redirect()->back()->with('error', 'Movie not found.');
+        }
         $anmation = "Drama";
-        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation'));
+        return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
     }
 
    

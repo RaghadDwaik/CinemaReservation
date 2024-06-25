@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Movie;
 use App\Models\Coupon;
+use App\Models\Reservation;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -174,6 +175,12 @@ class DashboardController extends Controller
         session()->flash('success', 'Coupon created successfully');
         return redirect()->route('AdminPanel.ViewCoupons');
 
+    }
+
+    public function ViewR(){
+
+        $reservation = Reservation::all(); 
+        return view('AdminPanel.ViewReservation', compact('reservation')); 
     }
 
    
