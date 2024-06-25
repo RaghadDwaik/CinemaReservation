@@ -63,12 +63,7 @@
                              </div>
                          </div>
                      </div>
-                     <div class="st_bcc_ticket_boxes_bottom_wrapper float_left">
-                         <p>You can access your ticket from your Profile. We will send you
-                             <br>an e-Mail/SMS Confirmation with in 15 Minutes.
-                         </p>
-
-                     </div>
+                     
                  </div>
              </div>
          </div>
