@@ -17,12 +17,14 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span>{{ $coupon->code }} - <strong>{{ $coupon->discount }}%</strong></span>
                         <div class="btn-group" role="group" aria-label="Coupon Actions">
+                        <div class="d-flex">
                             <a href="{{ route('AdminPanel.EditCoupon',$coupon->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             <form action="{{ route('AdminPanel.deleteC', $coupon->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             </form>
+</div>
                         </div>
                     </li>
                 @endforeach

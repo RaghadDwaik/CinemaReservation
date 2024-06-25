@@ -29,7 +29,7 @@
                     <div class="card-header bg-dark text-white">Reservation</div> <!-- Added bg-dark and text-white classes -->
                     <div class="card-body">
                         <p>View Reservation here.</p>
-                        <a href="#" class="btn btn-dark">View Reservation</a>
+                        <a href="{{ route('AdminPanel.ViewReservation') }}" class="btn btn-dark">View Reservation</a>
                     </div>
                 </div>
             </div>

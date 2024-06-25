@@ -106,6 +106,11 @@ Route::delete('AdminPanel/ViewCoupons/{coupon}', [DashboardController::class, 'd
 Route::get('AdminPanel/AddCoupon',[DashboardController::class,'addCoupon'])->name('AdminPanel.AddCoupon')->middleware('admin');
 Route::post('AdminPanel/storeC', [DashboardController::class, 'storeC'])->name('AdminPanel.storeC')->middleware('admin');
 Route::get('AdminPanel/ViewReservation',[DashboardController::class,'ViewR'])->name('AdminPanel.ViewReservation')->middleware('admin');
+Route::get('AdminPanel/AddReservation',[DashboardController::class,'addR'])->name('AdminPanel.AddReservation')->middleware('admin');
+Route::post('AdminPanel/storeR', [DashboardController::class, 'storeR'])->name('AdminPanel.storeR')->middleware('admin');
+Route::get('AdminPanel/EditRes/{reservation}/edit',[DashboardController::class ,'editRes'])->name('AdminPanel.EditRes');
+Route::put('AdminPanel/EditRes/{reservation}/update',[DashboardController::class,'updateR'])->name('AdminPanel.updateR');
+Route::delete('AdminPanel/ViewReservation/{reservation}', [DashboardController::class, 'deleteR'])->name('AdminPanel.deleteR')->middleware('admin');
 
 require __DIR__.'/auth.php';
 
