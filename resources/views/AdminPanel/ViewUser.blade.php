@@ -26,12 +26,14 @@
                 <td>{{ $user->phone }}</td>
                 <td>{{ $user->age }}</td>
                 <td>
+                <div class="d-flex">
                 <a href="{{ route('AdminPanel.EditUser',$user->id) }}" class="btn btn-primary btn-sm mr-2">Edit</a>
                 <form action="{{ route('AdminPanel.deleteU', $user->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
+</div>
                 </td>
             </tr>
             @endforeach

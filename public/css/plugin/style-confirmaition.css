@@ -28,12 +28,7 @@ background-attachment: fixed;
 color: #EEC438;
 letter-spacing: 0.5px;
 }
-.st_bcc_heading_wrapper h3 span{
-	font-size: 32px;
-color:#EEC438;
-letter-spacing: 0.5px;
-font-weight:600;
-}
+
 .st_bcc_ticket_boxes_wrapper{
 	background: #c9c9c9;
 border-radius: 8px;
@@ -46,7 +41,7 @@ padding:30px;
 	content:'';
 	width:50px;
 	height:50px;
-	background:#09090B;
+	background:#1F2229;
 	position:absolute;
 	left:-25px;
 	top:30%;
@@ -56,7 +51,7 @@ padding:30px;
 	content:'';
 	width:50px;
 	height:50px;
-	background: rgb(1, 1, 1) ;
+	background: #1F2229 ;
 	position:absolute;
 	right:-25px;
 	top:30%;
@@ -70,7 +65,7 @@ padding:30px;
 }
 .st_bcc_tecket_top_hesder p{
 	font-size: 24px;
-color: #EEC438;
+color: #8f2929;
 text-transform:uppercase;
 font-weight:600;
 }
@@ -140,29 +135,7 @@ color: rgba(0,0,0,0.87);
 letter-spacing: 0.57px;
 font-weight:800;
 }
-.st_bcc_teckt_bot_inner_img_cont h5{
-font-size: 14px;
-color: rgba(0,0,0,0.87);
-letter-spacing: 0.7px;
-padding-top:5px;
-font-weight:500;
-}
-.st_bcc_teckt_bot_inner_img_cont h3{
-font-size: 14px;
-color: rgba(0,0,0,0.87);
-letter-spacing: 0.7px;
-padding-top:10px;
-font-weight:500;
-}
-.st_bcc_teckt_bot_inner_img_cont h6{
-font-size: 14px;
-color: rgba(0,0,0,0.87);
-letter-spacing: 0.7px;
-font-weight:500;
-padding-top:15px;
-    line-height: 19px;
-}
-.st_bcc_tecket_bottom_inner_right i{
+/* .st_bcc_tecket_bottom_inner_right i{
 	color:#111;
 	font-size:26px;
 }
@@ -180,7 +153,7 @@ padding-top:10px;
 }
 .st_bcc_tecket_bottom_inner_right h3 span{
 	font-size:12px;
-}
+} */
 .st_bcc_tecket_bottom_right_wrapper h4{
 	font-size: 16px;
 color: rgba(0,0,0,0.87);
@@ -218,107 +191,7 @@ text-align: center;
 line-height: 24px;
 margin-top:30px;
 }
-.st_bcc_ticket_boxes_bottom_wrapper ul{
-	display:inline-block;
-	margin-top:30px;
-}
-.st_bcc_ticket_boxes_bottom_wrapper li{
-	float:left;
-	margin-right:10px;
-}
-.st_bcc_ticket_boxes_bottom_wrapper li:first-child a {
-        width: 150px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    float: left;
-    background: #ff4444;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    border: 1px solid #ff4444;
-	-webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-}
-.st_bcc_ticket_boxes_bottom_wrapper li:first-child a:hover {
-    background: transparent;
-    color: #ff4444;
-	-webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-}
-.st_bcc_ticket_boxes_bottom_wrapper li:last-child a {
-        width: 150px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    float: left;
-    background: transparent;
-    font-size: 12px;
-    font-weight: 600;
-    color: #ff4444;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    border: 1px solid #ff4444;
-	-webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-}
-.st_bcc_ticket_boxes_bottom_wrapper li:last-child a:hover {
-    background: #ff4444;
-    color: #fff;
-    border: 1px solid #ff4444;
-	-webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-}
-.st_bcc_heading_wrapper h4{
-	font-size: 16px;
-color: rgba(0,0,0,0.87);
-letter-spacing: 1px;
-font-weight:800;
-}
-.st_bcc_heading_wrapper_history{
-	padding-bottom:0;
-	border:0;
-}
-.st_bcc_ticket_boxes_wrapper_history{
-	margin-top:30px;
-}
-.booking_history_span{
-	font-size: 18px !important;
-color: rgba(0,0,0,0.38) !important;
-font-weight:600 !important;
-}
-.st_bcc_heading_wrapper_history_second{
-	margin-top:60px;
-}
-.st_bcc_ticket_boxes_bottom_wrapper h5{
-	padding-top:50px;
-}
-.st_bcc_ticket_boxes_bottom_wrapper h5 a{
-	font-size: 14px;
-color: #F06292;
-letter-spacing: 0.7px;
-font-weight:600;
-text-decoration:underline;
-}
-.st_bcc_main_wrapper_history{
-	padding-bottom:0;
-}
+
 .booking_type_back{
 	background: #f6f6f6;
 }

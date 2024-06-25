@@ -8,7 +8,12 @@ use App\Http\Controllers\Dashboard\CustomerController;
 use App\Http\Controllers\Dashboard\MovieController;
 use App\Http\Controllers\Dashboard\CouponController;
 
+
 use App\Http\Controllers\Dashboard\ContactController;
+
+
+use App\Http\Controllers\Dashboard\ReservationController;
+use App\Models\Reservation;
 
 
 /*
@@ -43,6 +48,9 @@ Route::get('/',[MovieController::class,'index'])->name('dashboard.movies.index')
 Route::get('/movies/{id}/paymant',[MovieController::class,'payment'])->name('dashboard.movies.paymant');
 Route::get('/movies/{id}/confirmationScreen',[MovieController::class,'confirmation_payment'])->name('movies.confirmationScreen');
 
+//Reservation
+Route::get('/movies/{id}/paymant', [ReservationController::class, 'create'])->name('dashboard.reservation.create');
+Route::post('/reservation/store/{id}', [ReservationController::class, 'store'])->name('dashboard.reservation.store');
 //Type of Movies
 Route::get('dashboard/movies/animation',[MovieController::class,'animation'])->name('dashboard.movies.animation');
 Route::get('dashboard/movies/comedy',[MovieController::class,'comedy'])->name('dashboard.movies.comedy');
@@ -103,6 +111,12 @@ Route::put('AdminPanel/EditCoupon/{coupon}/update', [DashboardController::class,
 Route::delete('AdminPanel/ViewCoupons/{coupon}', [DashboardController::class, 'deleteC'])->name('AdminPanel.deleteC')->middleware('admin');
 Route::get('AdminPanel/AddCoupon',[DashboardController::class,'addCoupon'])->name('AdminPanel.AddCoupon')->middleware('admin');
 Route::post('AdminPanel/storeC', [DashboardController::class, 'storeC'])->name('AdminPanel.storeC')->middleware('admin');
+Route::get('AdminPanel/ViewReservation',[DashboardController::class,'ViewR'])->name('AdminPanel.ViewReservation')->middleware('admin');
+Route::get('AdminPanel/AddReservation',[DashboardController::class,'addR'])->name('AdminPanel.AddReservation')->middleware('admin');
+Route::post('AdminPanel/storeR', [DashboardController::class, 'storeR'])->name('AdminPanel.storeR')->middleware('admin');
+Route::get('AdminPanel/EditRes/{reservation}/edit',[DashboardController::class ,'editRes'])->name('AdminPanel.EditRes');
+Route::put('AdminPanel/EditRes/{reservation}/update',[DashboardController::class,'updateR'])->name('AdminPanel.updateR');
+Route::delete('AdminPanel/ViewReservation/{reservation}', [DashboardController::class, 'deleteR'])->name('AdminPanel.deleteR')->middleware('admin');
 
 require __DIR__.'/auth.php';
 

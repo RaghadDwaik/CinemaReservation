@@ -13,6 +13,7 @@ class Reservation extends Model
         'creation_date',
         'user_id',
         'show_movie_id',
+        'coupon_id',
     ];
 
     public function users(){
