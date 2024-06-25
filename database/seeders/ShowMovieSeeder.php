@@ -15,7 +15,7 @@ class ShowMovieSeeder extends Seeder
     {
         Show_Movie::create([
             'movie_id'=>1,
-            'film_release_date' => date('2024-5-31'),
+            'film_release_date' => date('2024-9-3'),
             'show_time'=> '3:00',
             'sinema_hall_no'=> 1,
             'total_seat'=>30,
@@ -25,7 +25,7 @@ class ShowMovieSeeder extends Seeder
 
         Show_Movie::create([
             'movie_id'=>1,
-            'film_release_date' => date('2024-5-31'),
+            'film_release_date' => date('2024-9-3'),
             'show_time'=> '6:00',
             'sinema_hall_no'=> 1,
             'total_seat'=>30,
@@ -35,7 +35,7 @@ class ShowMovieSeeder extends Seeder
 
         Show_Movie::create([
             'movie_id'=>1,
-            'film_release_date' => date('2024-6-2'),
+            'film_release_date' => date('2024-8-8'),
             'show_time'=> '1:00',
             'sinema_hall_no'=> 3,
             'total_seat'=>30,
@@ -191,7 +191,7 @@ class ShowMovieSeeder extends Seeder
 
         Show_Movie::create([
             'movie_id'=>10,
-            'film_release_date' => date('2024-8-7'),
+            'film_release_date' => date('2024-1-7'),
             'show_time'=> '7:00',
             'sinema_hall_no'=> 2,
             'total_seat'=>30,
@@ -201,7 +201,7 @@ class ShowMovieSeeder extends Seeder
 
         Show_Movie::create([
             'movie_id'=>10,
-            'film_release_date' => date('2024-8-7'),
+            'film_release_date' => date('2024-3-7'),
             'show_time'=> '1:00',
             'sinema_hall_no'=> 2,
             'total_seat'=>30,

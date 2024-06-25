@@ -42,9 +42,9 @@
                                         <p class="bill-price" id="total-label" style="color: #EEC438; 
                                         font-size: 28px;
                                         font-weight: bold;">Total Price </p>
-                                        <h2 class="bill-head" id="total" style="color: white; 
+                                        <h2 class="bill-head" style="color: white; 
                                         font-size: 24px;
-                                        font-weight: bold;">100 TL</h2>
+                                        font-weight: bold;"> <span id="total">100</span>TL</h2>
                                         <!-- <small class="bill-price" id="total-label">Price includes all taxes</small> -->
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                         <!-- Assuming the authenticated user is making the reservation -->
 
                                         <label class="pay">Name on Card</label>
-                                        <input type="text" name="holdername" placeholder="John Smith" id="name"
+                                        <input type="text" name="holdername" placeholder="John Smith" id="name"  onchange="getSelectedCoupon()"
                                             required>
                                         <div class="row">
                                             <div class="col-md-12">
@@ -109,7 +109,7 @@
                                                     
                                                     @endforeach
                                                 </select> <label class="pay">%</label>
-
+                                                
                                                 <input type="hidden" name="coupon_id" id="coupon_id" readonly>
                                                 <input type="hidden" name="ticketprice" id="ticketprice" readonly>
 

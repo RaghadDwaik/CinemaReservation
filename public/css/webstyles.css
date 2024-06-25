@@ -10,7 +10,7 @@ body {
 body {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%),
         linear-gradient(90deg, rgba(0, 0, 0, 0.9) 33.18%, rgba(0, 0, 0, 0) 80.52%),
-        url('../img/images/movie-poster.png') no-repeat center center fixed;
+        url('../img/images/movie-poster.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
 }
