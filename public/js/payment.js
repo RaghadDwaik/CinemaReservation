@@ -65,7 +65,7 @@ function getSelectedCoupon() {
     // id select option
     var selectElement = document.getElementById('coupon');
     var selectedCouponId = selectElement.value;
-
+   
     // option value 
     var selectedCouponText = selectElement.options[selectElement.selectedIndex].text;
     var total = document.getElementById('#total'); //id total price
@@ -79,6 +79,7 @@ function getSelectedCoupon() {
 
     document.getElementById('coupon_id').value = selectedCouponId;
     document.getElementById('ticketprice').value = total_price;
+    
     
 
 
