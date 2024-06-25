@@ -11,67 +11,83 @@ use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $movie = Movie::all(); // Ensure you are fetching all movies
         $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
         if (!$movieWithId) {
             return redirect()->back()->with('error', 'Movie not found.');
         }
-        return view('dashboard.movies.all-movie', compact('movie' ,'movieWithId')); // Pass the movies variable to the view
-    }
-    
-// view movie for admin
-    public function View(){
-
-        $movies = Movie::all(); 
-        return view('AdminPanel.ViewMovie', compact('movies')); 
+        return view('dashboard.movies.all-movie', compact('movie', 'movieWithId')); // Pass the movies variable to the view
     }
 
+    // view movie for admin
+    public function View()
+    {
 
-    
-    public function animation(){
+        $movies = Movie::all();
+        return view('AdminPanel.ViewMovie', compact('movies'));
+    }
+
+
+
+    public function animation()
+    {
         $movie = Movie::all();
         $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
         if (!$movieWithId) {
             return redirect()->back()->with('error', 'Movie not found.');
         }
         $anmation = "Animation";
+
+      
         return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
-    public function comedy(){
+    public function comedy()
+    {
         $movie = Movie::all();
         $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
         if (!$movieWithId) {
             return redirect()->back()->with('error', 'Movie not found.');
         }
         $anmation = "Comedy";
+
         return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
-    public function action(){
+    public function action()
+    {
         $movie = Movie::all();
         $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
         if (!$movieWithId) {
             return redirect()->back()->with('error', 'Movie not found.');
         }
         $anmation = "Action";
+
         return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
-    public function drama(){
+    public function drama()
+    {
         $movie = Movie::all();
         $movieWithId = Movie::find(3); // Replace '1' with the ID of the specific movie you want to display
         if (!$movieWithId) {
             return redirect()->back()->with('error', 'Movie not found.');
         }
         $anmation = "Drama";
+
         return view('dashboard.movies.types-movies' , compact('movie' , 'anmation','movieWithId'));
+
     }
 
    
     public function ajaxSearch(Request $request)
+
         {
             $query = $request->input('query');
             $date = $request->input('date');
@@ -91,6 +107,7 @@ class MovieController extends Controller
         }
         
     
+
     public function searchSuggestions(Request $request)
     {
         $query = $request->input('query');
@@ -99,10 +116,7 @@ class MovieController extends Controller
 
         
     }
-    
 
-    
-    
     public function show($id)
     {
         $movie = Movie::findOrFail($id);
@@ -111,29 +125,25 @@ class MovieController extends Controller
     }
 
     // payment function
-  
-    public function payment($id ){
+
+    public function payment($id)
+    {
         $coupon = Coupon::all();
         $show_Movie = Show_Movie::findOrFail($id);
-        return view('dashboard.movies.payment' , compact('coupon' , 'show_Movie'));
-
-        
+        return view('dashboard.movies.payment', compact('coupon', 'show_Movie'));
     }
 
-    public function confirmation_payment($id){
+    public function confirmation_payment($id)
+    {
 
         $Show_Movie = Show_Movie::findOrFail($id);
-        //    Assuming movie_id is the foreign key
+        // Assuming movie_id is the foreign key
         $Movie = Movie::findOrFail($Show_Movie->movie_id);
-       
-        // Assuming you want to retrieve the reservation related to this Show_Movie
-       $Reservation = Reservation::where('show_movie_id', $Show_Movie->id)->first();
-    
-       return view('dashboard.movies.confirmation-screen', compact('Reservation' , 'Movie' ,'Show_Movie'));
+        // Retrieve the latest reservation related to this Show_Movie
+        $Reservation = Reservation::where('show_movie_id', $Show_Movie->id)
+            ->latest()
+            ->first();
 
+        return view('dashboard.movies.confirmation-screen', compact('Reservation', 'Movie', 'Show_Movie'));
     }
-  
-  
-
-
 }
