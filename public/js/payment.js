@@ -69,8 +69,9 @@ function getSelectedCoupon() {
     // option value 
     var selectedCouponText = selectElement.options[selectElement.selectedIndex].text;
     var total = document.getElementById('#total'); //id total price
-    
-    if(selectedCouponText == "Select Coupon")
+    if(selectedCouponText)
+    {
+        if(selectedCouponText == "Select Coupon")
        {selectedCouponText=0.0;} 
     
     total_price = 100 - ((selectedCouponText / 100) * 100); //100 = price tiket
@@ -80,7 +81,11 @@ function getSelectedCoupon() {
     document.getElementById('coupon_id').value = selectedCouponId;
     document.getElementById('ticketprice').value = total_price;
     
-    
+}
+else{
+    document.getElementById('coupon_id').value = "NULL";
+    document.getElementById('ticketprice').value = 100;
+}
 
 
 }
