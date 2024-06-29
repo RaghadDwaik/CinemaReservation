@@ -13,7 +13,7 @@
           </div>
           <div class="lg:w-1/2 md:w-2/3 mx-auto">
 
-            <form action="{{route('dashboard.contact')}}" method="POST">
+            <form action="{{route('dashboard.contact.send')}}" method="POST">
                 @csrf
                 <div class="flex flex-wrap -m-2">
                     <div class="p-2 w-1/2">

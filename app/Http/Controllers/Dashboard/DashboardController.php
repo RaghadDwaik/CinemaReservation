@@ -39,6 +39,7 @@ class DashboardController extends Controller
 
     public function addMovie()
     {
+        
         return view('AdminPanel.AddMovie');
     }
 
@@ -54,13 +55,39 @@ class DashboardController extends Controller
 
     public function storeM(Request $request)
     {
-        Movie::create(
-            $request->all()
-        );
-        session()->flash('success', 'Movie created successfully');
-        return redirect()->route('AdminPanel.ViewMovie');
-
+        $request->validate([
+            'movie_name' => 'required|string|max:255',
+            'language' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'description' => 'required|string',
+            'release_date' => 'required|date',
+            'run_time' => 'required|string|max:255',
+            'type' => 'required|string|max:255',
+            'rating' => 'required|string|max:255',
+        ]);
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time().'.'.$image->extension();
+            $image->move(public_path('images'), $imageName);
+    
+            $movie = new Movie([
+                'movie_name' => $request->movie_name,
+                'language' => $request->language,
+                'image' => 'images/' . $imageName,
+                'description' => $request->description,
+                'release_date' => $request->release_date,
+                'run_time' => $request->run_time,
+                'type' => $request->type,
+                'rating' => $request->rating,
+            ]);
+    
+            $movie->save();
+        }
+    
+        return redirect()->route('AdminPanel.ViewMovie')->with('success', 'Movie added successfully');
     }
+    
     public function editMovie(Movie $movie)
     {
         $types = ['Action', 'Comedy', 'Drama', 'Animation']; 

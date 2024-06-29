@@ -70,7 +70,12 @@
 
                      <div class="movie-item movie-item-three mb-50">
                          <div class="movie-poster">
-                             <img src="{{ asset($item->image) }}" alt="">
+                         @if (file_exists(public_path('images/' . $item->image)))
+        <img src="{{ asset('images/' . $item->image) }}"  class="img-thumbnail">
+    @else
+    <img src="{{ asset($item->image) }}" 
+    class="img-fluid rounded shadow-lg">
+    @endif
                              <ul class="overlay-btn">
                                  <li class="rating">
                                      <i class="fas fa-star"></i>

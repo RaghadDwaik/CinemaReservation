@@ -7,7 +7,7 @@
 @section('content')
     <h2 class="mb-4">Add Movie</h2>
     <div class="section" style="width:70%; margin:auto; border: 1px solid black; padding:10px;">
-        <form action="{{ route('AdminPanel.storeM') }}" method="POST">
+        <form action="{{ route('AdminPanel.storeM') }}" method="POST" enctype="multipart/form-data">
             @csrf
             
             <div class="mb-3">
@@ -33,13 +33,15 @@
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Release Date</label>
-                <input name="release_date" class="form-control" id="exampleFormControlTextarea1" rows="3" required>
+                <input type="date" name="release_date" class="form-control" id="exampleFormControlTextarea1" rows="3" required>
             </div>
-
+            
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Run Time </label>
                 <input name="run_time" class="form-control" id="exampleFormControlTextarea1" rows="3" required>
             </div>
+
+            
 
             <div class="mb-3">
               <label for="movieType" class="form-label">Movie Type</label>

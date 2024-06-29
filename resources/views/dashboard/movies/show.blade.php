@@ -7,8 +7,12 @@
         <div class="container">
             <div class="movie-details-content1">
                 <div>
-                    <img src="{{ asset($movie->image) }}" alt="{{ $movie->movie_name }}"
-                        class="img-fluid rounded shadow-lg">
+                @if (file_exists(public_path('images/' . $movie->image)))
+        <img src="{{ asset('images/' . $movie->image) }}" alt="{{ $movie->movie_name }}" class="img-thumbnail">
+    @else
+    <img src="{{ asset($movie->image) }}" alt="{{ $movie->movie_name }}"
+    class="img-fluid rounded shadow-lg">
+    @endif
                 </div>
                 <div class="movie-details-info">
                     <h2 class="title display-4 font-weight-bold">{{ $movie->movie_name }}</h2>

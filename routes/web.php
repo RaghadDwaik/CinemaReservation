@@ -131,7 +131,7 @@ Route::get('/movies/{id}', [MovieController::class, 'show'])->name('dashboard.mo
 
 
 //contact
-Route::get('/dashboard/contact', [ContactController::class, 'show'])->name('dashboard.contact');
-Route::post('/dashboard/contact', [ContactController::class, 'send'])->name('dashboard.contact');
+Route::get('/dashboard/contact', [ContactController::class, 'show'])->name('dashboard.contact.show');
+Route::post('/dashboard/contact', [ContactController::class, 'send'])->name('dashboard.contact.send');
 
 

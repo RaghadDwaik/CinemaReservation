@@ -53,7 +53,6 @@
 
 .movie-details-area1 {
     padding: 60px 0;
-    background: url("{{asset('img/bg/movie_details_bg.jpg') }}");
     /* Image background */
     background-size: cover;
     background-position: center;

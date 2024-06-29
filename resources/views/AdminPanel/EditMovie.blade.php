@@ -23,7 +23,7 @@
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" name="image" value="{{ $movie->image }}" class="form-control" id="image" required>
+                <input type="file" name="image" value="{{ $movie->image }}" class="form-control" id="image" required>
             </div>
 
             <div class="mb-3">

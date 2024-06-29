@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h2 class="mb-4">Edit Movie</h2>
+    <h2 class="mb-4">Edit User</h2>
     <div class="section" style="width:70%; margin:auto; border: 1px solid black; padding:10px;">
         <form action="{{ route('AdminPanel.updateU', $user->id) }}" method="POST">
             @csrf
